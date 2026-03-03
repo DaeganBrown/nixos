@@ -8,9 +8,6 @@
       # "fileManager" = "dolphin";
       "$menu" = "hyprlauncher";
 
-      ecosystem = {
-        enforce_permissions = 1;
-      };
 
       bind = [
 	"$mod, RETURN, exec, $terminal"
