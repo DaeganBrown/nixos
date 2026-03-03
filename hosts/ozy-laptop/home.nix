@@ -2,9 +2,11 @@
 
 {
   imports = [
-    ../../modules/home-manager/hyprland.nix
-    ../../modules/home-manager/waybar.nix
-    ../../modules/home-manager/firefox.nix
+    # Generics
+    ../../modules/home-manager/generic/hyprland-core.nix
+    ../../modules/home-manager/generic/hyprland-ctrls.nix
+    ../../modules/home-manager/generic/waybar-core.nix
+    ../../modules/home-manager/generic/firefox.nix
     # Mine
     ../../modules/home-manager/ozy/git.nix
   ];
