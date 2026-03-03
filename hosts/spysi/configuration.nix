@@ -50,19 +50,19 @@
     pulse.enable = true;
   };
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  # users.users.ozy = {
-  #   isNormalUser = true;
-  #   description = "ozy";
-  #   extraGroups = [ "networkmanager" "wheel" ];
-  #   packages = with pkgs; [];
-  # };
+  Define a user account. Don't forget to set a password with ‘passwd’.
+  users.users.spysi = {
+    isNormalUser = true;
+    description = "spysi";
+    extraGroups = [ "networkmanager" "wheel" ];
+    packages = with pkgs; [];
+  };
   
   # home manager 
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
     users = {
-      # "ozy" = import ./home.nix;
+      "spysi" = import ./home.nix;
     };
   };
 
