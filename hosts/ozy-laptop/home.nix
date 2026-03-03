@@ -7,8 +7,12 @@
     ../../modules/home-manager/generic/hyprland-ctrls.nix
     ../../modules/home-manager/generic/waybar-core.nix
     ../../modules/home-manager/generic/firefox.nix
+    ../../modules/home-manager/generic/nvf.nix
     # Mine
     ../../modules/home-manager/ozy/git.nix
+
+    # uh
+    inputs.nvf.homeManagerModules.default
   ];
   home.username = "ozy";
   home.homeDirectory = "/home/ozy";
