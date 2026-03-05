@@ -47,6 +47,9 @@
 - [ ] Themes
   - [ ] Tron
   - [ ] Gruvbox
+- [ ] Java dev
+- [ ] lf setup
+- [ ] Minecraft Modded 
 
 ## Misc. Tasks
 
