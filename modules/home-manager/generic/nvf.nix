@@ -8,7 +8,9 @@
         options = {
           tabstop = 2;
           shiftwidth = 2;
+          softtabstop = 2;
         };
+
         theme = {
           enable = true;
           name = "gruvbox";
@@ -19,7 +21,23 @@
           enableTreesitter = true;
           nix.enable = true;
           rust.enable = true;
+          markdown = {
+            enable = true;
+            extensions.markview-nvim.enable = true;
+          };
         };
+
+        autocmds = [
+          {
+            event = [ "FileType" ];
+            pattern = [ "markdown" ];
+            command = ''
+              setlocal tabstop=2
+              setlocal shiftwidth=2
+              setlocal expandtab
+            '';
+          }
+        ];
       
 
         statusline.lualine.enable = true;
