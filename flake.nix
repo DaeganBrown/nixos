@@ -31,18 +31,24 @@
       nixosConfigurations = {
         default = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs; };
-	  modules = [
-	    ./hosts/default/configuration.nix
-	    inputs.home-manager.nixosModules.default
-	  ];
-	};
-	ozy-laptop = nixpkgs.lib.nixosSystem {
-	  specialArgs = { inherit inputs; };
-	  modules = [
-	    ./hosts/ozy-laptop/configuration.nix
-	    inputs.home-manager.nixosModules.default
-
-	  ];
+	        modules = [
+	          ./hosts/default/configuration.nix
+            inputs.home-manager.nixosModules.default
+	        ];
+	      };
+        ozy = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./hosts/ozy/configuration.nix
+            inputs.home-manager.nixosModules.default
+          ];
+        };
+	      ozy-laptop = nixpkgs.lib.nixosSystem {
+	        specialArgs = { inherit inputs; };
+	        modules = [
+	          ./hosts/ozy-laptop/configuration.nix
+	          inputs.home-manager.nixosModules.default
+	        ];
         };
       };
     };

@@ -1,12 +1,16 @@
-{ config, pkgs, lib, inputs, ... }:
+{ config, pkgs, lib, inputs, modulesPath, ... }:
 
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ../../modules/nixos/fonts.nix
+      # for making ISO 
+      "${modulesPath}/installer/cd-dvd/installation-cd-minimal.nix" 
     ];
-
+  
+  # for ISO (maybe not needed)
+  nixpkgs.hostPlatform = "x86_64-linux";
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;

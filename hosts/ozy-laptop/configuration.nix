@@ -3,7 +3,8 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+      ./hardware-configuration.nix 
+      ../../modules/nixos/common-pkgs.nix
       ../../modules/nixos/fonts.nix
     ];
 
@@ -82,17 +83,6 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    # neovim 
-    tree
-    wget
-    git
-    lf
-    fzf
-    kitty
-    #(pkgs.waybar.overrideAttrs (oldAttrs: {
-    #  mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
-    #  })
-    #)
     mako
     libnotify
     swww
