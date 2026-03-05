@@ -6,8 +6,8 @@
     fzf
     git
     kitty
+    silver-searcher
     tree
     wget 
-
   ];
 }
