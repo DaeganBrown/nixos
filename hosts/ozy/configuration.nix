@@ -4,6 +4,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ../../modules/nixos/fonts.nix
     ];
 
   # Bootloader.
@@ -33,6 +34,13 @@
     LC_TELEPHONE = "en_US.UTF-8";
     LC_TIME = "en_US.UTF-8";
   };
+  
+  # hardware
+  hardware.opengl.enable = true;
+
+  # hyprland
+  programs.hyprland.enable = true;
+  programs.hyprland.package = inputs.hyprland.packages."${pkgs.system}".hyprland;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -48,9 +56,10 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
+    jack.enable = true;
   };
 
-  Define a user account. Don't forget to set a password with ‘passwd’.
+  # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.ozy = {
     isNormalUser = true;
     description = "ozy";
@@ -65,14 +74,35 @@
       "ozy" = import ./home.nix;
     };
   };
-
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    # neovim 
+    tree
+    wget
+    git
+    lf
+    fzf
+    kitty
+    #(pkgs.waybar.overrideAttrs (oldAttrs: {
+    #  mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+    #  })
+    #)
+    mako
+    libnotify
+    swww
+    hyprlauncher
+
   ];
+  
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+  };
 
   system.stateVersion = "25.11"; # Did you read the comment?
 
