@@ -36,6 +36,13 @@
             inputs.home-manager.nixosModules.default
 	        ];
 	      };
+        capps = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./host/capps/configuration.nix 
+            inputs.home-manager.nixosModules.default
+          ];
+        };
         ozy = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs; };
           modules = [
