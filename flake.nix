@@ -6,7 +6,7 @@
     hyprland = {
       url = "github:hyprwm/Hyprland";
     };
-
+    hardware.url = "github:nixos/nixos-hardware";
     hyprland-plugins = {
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
