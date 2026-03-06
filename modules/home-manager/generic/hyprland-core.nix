@@ -1,6 +1,10 @@
 { config, pkgs, ... }:
 
 {
+  home.packages = with pkgs; [
+    hyprshot
+    hyprlauncher
+  ];
   wayland.windowManager.hyprland = {
     enable = true;
     settings.ecosystem = {

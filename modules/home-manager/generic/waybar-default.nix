@@ -14,14 +14,27 @@
       modules-left = [
         "hyprland/workspaces"
       ];
+      modules-center = [
+        "clock"
+      ];
       modules-right = [
+        "clock#date"
         "battery"
       ];
+      "clock" = {
+        format = "{:%H:%M }";
+        interval = 60;
+      };
       "battery" = {
         format = "{capacity}%";
-        format-alt = "{power}W";
         interval = 60;
-        on-click = "waybar-msg module battery toggle";
+      };
+      "clock#date" = {
+        format = "{:%m-%d-%y }";
+        format-alt = "{:%A %B %d}";
+        interval = 60;
+        on-click = "waybar-msg module clock toggle";
+        tooltip-format = "<tt><small>{calendar}</small></tt>";
       };
 
 
