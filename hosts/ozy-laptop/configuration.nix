@@ -7,6 +7,8 @@
       ../../modules/nixos/common-pkgs.nix
       ../../modules/nixos/multi-media.nix 
       ../../modules/nixos/fonts.nix
+      ../../modules/nixos/steam.nix 
+
     ];
 
   # Bootloader.
