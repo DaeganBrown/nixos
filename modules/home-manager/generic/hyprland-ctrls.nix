@@ -46,10 +46,12 @@
         ",XF86MonBrightnessUp, exec, brightnessctl -e4 -n2 set 5%+"
         ",XF86MonBrightnessDown, exec, brightnessctl -e4 -n2 set 5%-"
       ];
-      extraConfig = ''
-        exec-once = waybar &
-        exec-once = swww &
-      '';
+      extraConfig = {
+        exec-once = [
+          "sleep 0.5 && swww"
+          "sleep 0.5 && waybar"
+        ];
+      };
     };
   };
 }

@@ -22,7 +22,7 @@
   networking.hostName = "nixos"; # Define your hostname.
   networking.networkmanager.enable = true;
 
-  time.timeZone = "America/Indiana/Vincennes";
+  time.timeZone = "America/Chicago";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
@@ -89,7 +89,6 @@
     mako
     libnotify
     swww
-    hyprlauncher
 
   ];
   
