@@ -6,6 +6,7 @@
     fzf
     git
     kitty
+    neofetch
     silver-searcher
     tree
     wget 
