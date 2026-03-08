@@ -9,7 +9,7 @@
       ../../modules/nixos/fonts.nix
       ../../modules/nixos/steam.nix 
       ../../modules/nixos/nvidia.nix
-      #inputs.hardware.nixosModules.common-gpu-nvidia-nonprime
+      ../../modules/nixos/gdm.nix
     ];
 
   # Bootloader.
