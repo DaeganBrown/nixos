@@ -15,7 +15,7 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-
+  services.displayManager.sddm.enable = false;
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 

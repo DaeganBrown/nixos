@@ -1,10 +1,13 @@
 { config, pkgs, ... }:
 
 {
+  imports  = [
+    ./waybar-core.nix
+  ];
   programs.waybar.style =''
-   * {
+* {
   border: none;
-  font-family: "JetbrainsMono Nerd Font";
+  font-family: "FiraCode Nerd Font";
   font-size: 15px;
   min-height: 10px;
 }
@@ -47,7 +50,16 @@ window#waybar.hidden {
 }
 
 /* Separation to the rigth */
-#clock,
+#clock {
+  margin-right: 5px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin-left: 5px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+#clock#date,
 #temperature,
 #language {
   margin-right: 5px;
