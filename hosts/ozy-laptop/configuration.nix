@@ -8,7 +8,7 @@
       ../../modules/nixos/multi-media.nix 
       ../../modules/nixos/fonts.nix
       ../../modules/nixos/steam.nix
-      ../../modules.nixos/radeon.nix
+      ../../modules/nixos/radeon.nix
 
     ];
 
