@@ -9,6 +9,7 @@
       ../../modules/nixos/fonts.nix
       ../../modules/nixos/steam.nix
       ../../modules/nixos/radeon.nix
+      ../../modules/nixos/discord.nix
     ];
 
   # Bootloader.
