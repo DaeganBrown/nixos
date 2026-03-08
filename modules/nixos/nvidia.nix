@@ -1,7 +1,7 @@
-{ inputs, ... }:
+{ inputs, config, pkgs, ... }:
 
 {
   imports = [
-    inputs.hardware.nixosModules.common-gpu-amd
+    inputs.hardware.nixosModules.common-gpu-nvidia-nonprime
   ];
 }

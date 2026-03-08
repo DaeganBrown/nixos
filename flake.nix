@@ -6,7 +6,7 @@
     hyprland = {
       url = "github:hyprwm/Hyprland";
     };
-    hardware.url = "github:nixos/nixos-hardware";
+    hardware.url = "github:nixos/nixos-hardware/master";
     hyprland-plugins = {
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
@@ -22,7 +22,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, ... }@inputs:
+  outputs = { self, nixpkgs,  ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -39,8 +39,9 @@
         capps = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs; };
           modules = [
-            ./host/capps/configuration.nix 
+            ./hosts/capps/configuration.nix 
             inputs.home-manager.nixosModules.default
+            #nixos-hardware.nixosModules.common-gpu-nvidia-nonprime
           ];
         };
         ozy = nixpkgs.lib.nixosSystem {

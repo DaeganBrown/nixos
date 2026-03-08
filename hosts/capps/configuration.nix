@@ -9,6 +9,7 @@
       ../../modules/nixos/fonts.nix
       ../../modules/nixos/steam.nix 
       ../../modules/nixos/nvidia.nix
+      #inputs.hardware.nixosModules.common-gpu-nvidia-nonprime
     ];
 
   # Bootloader.
@@ -16,7 +17,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Use latest kernel.
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_6_12;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   networking.hostName = "nixos"; # Define your hostname.
@@ -42,6 +43,14 @@
   # hardware
   hardware.opengl.enable = true;
 
+  # nvidia things
+  hardware.graphics.enable = true;
+  services.xserver.videoDrivers = ["nvidia"];
+  hardware.nvidia.modesetting.enable = true;
+  hardware.nvidia.open = true;
+  # hardware.nvidia.prime.offload.enable = false;
+  # hardware.nvidia.prime.sync.enable = false;
+
   # hyprland
   programs.hyprland.enable = true;
   programs.hyprland.package = inputs.hyprland.packages."${pkgs.system}".hyprland;
@@ -64,7 +73,7 @@
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.ozy = {
+  users.users.capps = {
     isNormalUser = true;
     description = "capps";
     extraGroups = [ "networkmanager" "wheel" ];
