@@ -40,7 +40,7 @@
   };
   
   # hardware
-  hardware.opengl.enable = true;
+  hardware.graphics.enable = true;
 
   # hyprland
   programs.hyprland.enable = true;

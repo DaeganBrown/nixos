@@ -19,9 +19,7 @@
 
 ## MVP
 
-- [ ] NVidia Setups
-  - [ ] 1060
-  - [ ] 3060
+- [x] NVidia Setups
 - [ ] Steam 
 - [ ] Stoat
 - [ ] `spysi` profile
