@@ -9,7 +9,8 @@
       ../../modules/nixos/fonts.nix
       ../../modules/nixos/steam.nix 
       ../../modules/nixos/nvidia.nix
-      #inputs.hardware.nixosModules.common-gpu-nvidia-nonprime
+      #../../modules/nixos/sddm-where-is-my-sddm-theme.nix
+      ../../modules/nixos/sddm-astronaut.nix
     ];
 
   # Bootloader.
