@@ -10,6 +10,7 @@
       ../../modules/nixos/steam.nix 
       ../../modules/nixos/nvidia.nix
       ../../modules/nixos/discord.nix
+      ../../modules/nixos/gdm.nix
     ];
 
   # Bootloader.
