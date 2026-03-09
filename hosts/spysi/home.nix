@@ -1,19 +1,35 @@
-{ config, pkgs, ... }:
+{ inputs, config, pkgs, lib, ... }:
 
 {
-  home.username = "";
-  home.homeDirectory = "/home/";
+  imports = [
+    # Generics
+    ../../modules/home-manager/generic/hyprland-core.nix
+    ../../modules/home-manager/generic/hyprland-ctrls.nix
+    ../../modules/home-manager/generic/hyprland-4k.nix
+    ../../modules/home-manager/generic/waybar-beautiful-minamalist.nix
+    ../../modules/home-manager/generic/firefox.nix
+    ../../modules/home-manager/generic/nvf.nix
+    ../../modules/home-manager/spysi/git.nix
+
+    # uh
+    inputs.nvf.homeManagerModules.default
+  ];
+  home.username = "spysi";
+  home.homeDirectory = "/home/spysi";
 
   home.stateVersion = "25.11"; # Please read the comment before changing.
 
   home.packages = [
     pkgs.hello
-
+    pkgs.git
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
     # # environment:
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
+    # '')
+    # (pkgs.writeShellScriptBin "check-builds" ''
+    #  nix-env --list-generations
     # '')
   ];
 
@@ -52,4 +68,5 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
 }
