@@ -86,10 +86,13 @@
         #=========================================================#
         # Servers
         #=========================================================#
-        server-PowerEdge-720 = nixpkgs.lib.nixosSystem {
+        admin-PowerEdge-720 = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs; };
           modules = [
             ./options/server-poweredge-720.nix
+            {
+              device = "-poweredge-720";
+            }
             inputs.home-manager.nixosModules.default
           ];
         };
