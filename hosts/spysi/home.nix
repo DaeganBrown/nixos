@@ -6,7 +6,7 @@
     ../../modules/home-manager/generic/hyprland-core.nix
     ../../modules/home-manager/generic/hyprland-ctrls.nix
     ../../modules/home-manager/generic/hyprland-4k.nix
-    ../../modules/home-manager/generic/waybar-theme-beautiful-minamalist.nix
+    ../../modules/home-manager/generic/waybar-theme-super-waybar.nix
     ../../modules/home-manager/generic/firefox.nix
     ../../modules/home-manager/generic/nvf.nix
     ../../modules/home-manager/spysi/git.nix

@@ -8,7 +8,7 @@
     #../../modules/home-manager/generic/waybar-core.nix
     #../../modules/home-manager/generic/waybar-default.nix
     #../../modules/home-manager/generic/waybar-theme-oldman.nix
-    ../../modules/home-manager/generic/waybar-theme-beautiful-minamalist.nix
+    ../../modules/home-manager/generic/waybar-theme-super-waybar.nix
     ../../modules/home-manager/generic/firefox.nix
     ../../modules/home-manager/generic/nvf.nix
     # Mine
