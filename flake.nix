@@ -65,6 +65,7 @@
         spysi = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs; };
           modules = [
+            ./options/spysi-default.nix
             ./hosts/spysi/configuration.nix 
             inputs.home-manager.nixosModules.default
           ];
