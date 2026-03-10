@@ -10,6 +10,7 @@
     ../../modules/home-manager/generic/firefox.nix
     ../../modules/home-manager/generic/nvf.nix
     ../../modules/home-manager/spysi/git.nix
+    ../../modules/home-manager/generic/scripts.nix
 
     # uh
     inputs.nvf.homeManagerModules.default
