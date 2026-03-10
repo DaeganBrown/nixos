@@ -3,6 +3,7 @@
 with lib;
 let 
   device = "";
+  hostname = "nixos";
   resolution = [ 1920 1080 ];
   search_engine = "vivaldi";
   terminal = "kitty";
@@ -15,6 +16,11 @@ in
       type = types.str;
       default = device;
       description = "Device, so that user may have multiple";
+    };
+    hostname = mkOption {
+      type = types.str;
+      default = hostname;
+      description = "Hostname of device";
     };
     resolution = mkOption {
       type = types.listOf types.int;

@@ -29,6 +29,9 @@
     in
     {
       nixosConfigurations = {
+        #=========================================================#
+        # System Configs
+        #=========================================================#
         default = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs; };
 	        modules = [
@@ -36,6 +39,16 @@
             inputs.home-manager.nixosModules.default
 	        ];
 	      };
+        installerIso = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./options/iso-default.nix
+            ./hosts/isoimage/configuration.nix
+          ];
+        };
+        #=========================================================#
+        # Users
+        #=========================================================#
         capps = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs; };
           modules = [
@@ -62,17 +75,21 @@
 	          inputs.home-manager.nixosModules.default
 	        ];
         };
-				server-PowerEdge-720 = nixpkgs.lib.nixosSystem {
-					specialArgs = { inherit inputs; };
-					modules = [
-						inputs.home-manager.nixosModules.default
-					];
-				};
         spysi = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs; };
           modules = [
             ./options/spysi-default.nix
             ./hosts/spysi/configuration.nix 
+            inputs.home-manager.nixosModules.default
+          ];
+        };
+        #=========================================================#
+        # Servers
+        #=========================================================#
+        server-PowerEdge-720 = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./options/server-poweredge-720.nix
             inputs.home-manager.nixosModules.default
           ];
         };
