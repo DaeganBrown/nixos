@@ -28,8 +28,16 @@
     modules-left = [
       "custom/smallspacer"
       "hyprland/workspaces"
+      "custom/smallspacer"
+      "custom/steam"
+      "custom/smallspacer"
+      "custom/vivaldi"
+      "custom/smallspacer"
+      "custom/discord"
+      "custom/smallspacer"
+      "custom/stoat"
       "custom/spacer"
-      "mpris"
+      "custom/refresh"
     ];
     modules-center = [
       "custom/padd"
@@ -53,6 +61,26 @@
       "battery"
       "custom/padd"
     ];
+    "custom/steam" = {
+      format = " ";
+      on-click = "steam";
+    };
+    "custom/vivaldi" = {
+      format = " ";
+      on-click = "vivaldi";
+    };
+    "custom/discord" = {
+      format = " ";
+      on-click = "discordptb";
+    };
+    "custom/stoat" = {
+      format = "󱌧 ";
+      on-click = "stoat-desktop";
+    };
+    "custom/refresh" = {
+      format = " ";
+      # on-click = "";
+    };
 
     "custom/led" = {
       format = "<span color='#021c18'>󰍿</span> <span color='#313436'></span> ";
@@ -120,20 +148,6 @@
         "󰪤"
         "󰪥"
       ];
-    };
-    "mpris" = {
-      format = "{player_icon} {dynamic}";
-      format-paused = "<span color='grey'>{status_icon} {dynamic}</span>";
-      max-length = 50;
-      player-icons = {
-        default = "⏸";
-        mpv = "🎵";
-      };
-      status-icons = {
-        paused = "▶";
-      };
-      # ignored-players = [ "firefox" ]
-
     };
     "tray" = {
       icon-size = 16;
@@ -331,7 +345,7 @@
       };
       format = "{icon}";
       rotate = 0;
-      format-charging = "<span color-'#a6d189'>󱐋</span>";
+      format-charging = "<span color='#a6d189'>󱐋</span>";
       format-plugged = "󰂄";
       format-icons = [
         "󰝦"
@@ -527,6 +541,7 @@
  color: #A1BDCE;
  margin: 2px 0px 0px 0px;
 }
+
 
 window#waybar {
     background: #0F0F17; 
@@ -748,15 +763,6 @@ font-weight: normal;
 font-size: 22px;
 color: #E4C9AF;
 }
-#mpris{
-color: white;
-animation: repeat;
-	animation-name: blink;
-	animation-duration: 3s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
 
 @keyframes blink {
     to {
@@ -800,10 +806,6 @@ font-family: "Martian Mono";
 #upower#headset,
 #upower{
 color: #a6d189;
-}
-#mpris{
-font-size: 15px;
-font-weight: bold
 }
 #custom-rr_end {
 font-weight: normal;
@@ -904,6 +906,17 @@ font-weight: normal;
 #group-minimized {
     border-left: solid;
     border-left-width: 0.5;
+}
+
+#custom-steam,
+#custom-vivaldi,
+#custom-discord,
+#custom-stoat,
+#custom-refresh {
+  font-family: "FiraCode Nerd Font";
+  font-size: 19px;
+  color: #A1BDCE;
+
 }
   '';
 }
