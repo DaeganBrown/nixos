@@ -1,4 +1,4 @@
-{ inputs, config, pkgs, lib, ... }:
+{ inputs, osConfig, pkgs, lib, ... }:
 
 {
   imports = [
@@ -11,14 +11,15 @@
     ../../modules/home-manager/generic/waybar-theme-super-waybar.nix
     ../../modules/home-manager/generic/firefox.nix
     ../../modules/home-manager/generic/nvf.nix
+    ../../modules/home-manager/generic/scripts.nix
     # Mine
     ../../modules/home-manager/ozy/git.nix
 
     # uh
     inputs.nvf.homeManagerModules.default
   ];
-  home.username = "ozy";
-  home.homeDirectory = "/home/ozy";
+  home.username = osConfig.username;
+  home.homeDirectory = "/home/${osConfig.username}";
 
   home.stateVersion = "25.11"; # Please read the comment before changing.
 
@@ -66,7 +67,7 @@
   #  /etc/profiles/per-user/ozy/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    EDITOR = "nvim";
   };
 
   # Let Home Manager install and manage itself.

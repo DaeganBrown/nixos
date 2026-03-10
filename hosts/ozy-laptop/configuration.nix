@@ -65,9 +65,9 @@
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.ozy = {
+  users.users."${config.username}" = {
     isNormalUser = true;
-    description = "ozy";
+    description = "${config.username}";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [];
   };
@@ -76,7 +76,7 @@
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
     users = {
-      "ozy" = import ./home.nix;
+      "${config.username}" = import ./home.nix;
     };
   };
   xdg.portal.enable = true;
