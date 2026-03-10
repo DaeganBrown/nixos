@@ -62,6 +62,12 @@
 	          inputs.home-manager.nixosModules.default
 	        ];
         };
+				server-PowerEdge-720 = nixpkgs.lib.nixosSystem {
+					specialArgs = { inherit inputs; };
+					modules = [
+						inputs.home-manager.nixosModules.default
+					];
+				};
         spysi = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs; };
           modules = [
