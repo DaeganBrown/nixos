@@ -6,13 +6,14 @@
     ../../modules/home-manager/generic/hyprland-core.nix
     ../../modules/home-manager/generic/hyprland-ctrls.nix
     ../../modules/home-manager/generic/hyprland-4k.nix
-    ../../modules/home-manager/generic/waybar-core.nix
-    ../../modules/home-manager/generic/waybar-default.nix
-    ../../modules/home-manager/generic/waybar-theme-oldman.nix
-    ../../modules/home-manager/generic/firefox.nix
+    ../../modules/home-manager/generic/waybar-theme-super-waybar.nix
+  
+  
+    #../../modules/home-manager/generic/firefox.nix
     ../../modules/home-manager/generic/nvf.nix
     ../../modules/home-manager/capps/git.nix
-
+    ../../modules/home-manager/generic/scripts.nix
+    ../../modules/home-manager/generic/dev.nix
     # uh
     inputs.nvf.homeManagerModules.default
   ];
@@ -24,6 +25,7 @@
   home.packages = [
     pkgs.hello
     pkgs.git
+    
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
     # # environment:

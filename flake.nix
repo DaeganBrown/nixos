@@ -39,6 +39,7 @@
         capps = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs; };
           modules = [
+            ./options/capps-default.nix
             ./hosts/capps/configuration.nix 
             inputs.home-manager.nixosModules.default
             #nixos-hardware.nixosModules.common-gpu-nvidia-nonprime
