@@ -20,25 +20,25 @@
 ## MVP
 
 - [x] NVidia Setups
-- [ ] Steam 
-- [ ] Stoat
-- [ ] `spysi` profile
-- [ ] `rockingcone` profile
+- [x] Steam 
+- [x] Stoat
+- [x] `spysi` profile
+- [x] `rockingcone` profile
   - [ ] `rockingcone-laptop` profile
 - [ ] `ozy` profile
   - [x] `ozy-laptop` profile
-- [ ] zen
+- [x] vivaldi
 
 ## Wanted Modules
 
 - [x] nvf
-- [ ] hyprland
+- [x] hyprland
   - [x] hyprland-core
   - [x] hyprland-ctrls
   - [ ] hyprland-cursor
 - [ ] waybar
   - [x] waybar-core
-  - [ ] waybar-default
+  - [x] waybar-default
 - [ ] awww
   - [ ] awww-core
   - [ ] awww-gruvbox

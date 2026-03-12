@@ -5,7 +5,7 @@
     # Generics
     ../../modules/home-manager/generic/nvf.nix
     ../../modules/home-manager/generic/scripts.nix
-    ../../modules/home-manager/ozy/git.nix
+    ../../modules/home-manager/server/git.nix
 
     # uh
     inputs.nvf.homeManagerModules.default

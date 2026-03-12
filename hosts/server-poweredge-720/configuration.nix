@@ -12,8 +12,11 @@
     ];
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  # boot.loader.systemd-boot.enable = true;
+  # boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.grub.enable = true;
+  boot.loader.grub.device = "/dev/sdb";
+  boot.loader.grub.useOSProber = true;
   services.displayManager.sddm.enable = false;
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -40,11 +43,9 @@
   };
   
   # hardware
-  hardware.graphics.enable = true;
+  # hardware.graphics.enable = true;
 
   # hyprland
-  programs.hyprland.enable = true;
-  programs.hyprland.package = inputs.hyprland.packages."${pkgs.system}".hyprland;
 
   # Configure keymap in X11
   services.xserver.xkb = {

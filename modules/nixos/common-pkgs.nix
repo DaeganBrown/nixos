@@ -6,6 +6,7 @@
     btop 
     fzf
     git
+    unixtools.ifconfig
     kitty
     neofetch
     pavucontrol

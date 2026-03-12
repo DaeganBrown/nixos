@@ -17,6 +17,7 @@
           style = "dark";
         };
         lsp.enable = true;
+        lsp.servers.nixd.settings.nil.nix.autoArchive = true;
         languages = {
           enableTreesitter = true;
           nix.enable = true;

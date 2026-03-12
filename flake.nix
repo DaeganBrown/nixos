@@ -93,6 +93,7 @@
             {
               device = "-poweredge-720";
             }
+	    ./hosts/server-poweredge-720/configuration.nix
             inputs.home-manager.nixosModules.default
           ];
         };

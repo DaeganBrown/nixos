@@ -1,16 +1,18 @@
 { config, pkgs, ... }:
 
 {
-  networking.firewalls.allowedTCPPorts = [ 10823 ];
+  networking.firewall.allowedTCPPorts = [ 10823 ];
   services.openssh = {
-    enable = false;
+    enable = true;
     ports = [ 10823 ];
     settings = {
-      PasswordAuthentication = true;
+      PasswordAuthentication = false;
+      PubkeyAuthentication = "yes";
+      AuthorizedKeysFile = ".ssh/authorized_keys";
       AllowUsers = null;
       UseDns = true;
       X11Forwarding = false;
-      PermitRootLogin = "prohubut-password";
+      PermitRootLogin = "prohibit-password";
     };
   };
 }
