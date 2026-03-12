@@ -63,25 +63,25 @@
     ];
     "custom/steam" = {
       format = " ";
-      on-click = "steam";
+      on-click = "setsid -f steam";
       tooltip = true;
       tooltip-format = "Steam";
     };
     "custom/vivaldi" = {
       format = " ";
-      on-click = "vivaldi";
+      on-click = "setsid -f vivaldi";
       tooltip = true;
       tooltip-format = "vivaldi";
     };
     "custom/discord" = {
       format = " ";
-      on-click = "discordptb";
+      on-click = "setsid -f discordptb";
       tooltip = true;
       tooltip-format = "Discord";
     };
     "custom/stoat" = {
       format = "󱌧 ";
-      on-click = "stoat-desktop";
+      on-click = "setsid -f stoat-desktop";
       tooltip = true;
       tooltip-format = "Stoat";
     };
