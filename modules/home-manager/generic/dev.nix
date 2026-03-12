@@ -1,9 +1,10 @@
 { pkgs, ... }:
 
 {
-  home.packages = [
-    pkgs.rustc
-    pkgs.cargo
-    pkgs.gcc
+  home.packages = with pkgs; [
+    rustc
+    cargo
+    gcc
+    
   ];
 }
