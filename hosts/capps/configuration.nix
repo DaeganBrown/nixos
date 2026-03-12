@@ -11,6 +11,7 @@
       ../../modules/nixos/nvidia.nix
       ../../modules/nixos/discord.nix
       ../../modules/nixos/gdm.nix
+      ../../modules/nixos/super-user-rules.nix
     ];
 
   # Bootloader.
