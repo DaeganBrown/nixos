@@ -546,7 +546,7 @@
 }
 
 #custom-notification {
-  font-family: "JetBrains Mono Nerd Font";
+  font-family: "FiraCode Nerd Font Propo";
   font-size: 17px;
  color: #A1BDCE;
  margin: 2px 0px 0px 0px;
@@ -655,7 +655,7 @@ background: rgba(23, 23, 23, 0.0);
     min-height: 16px;
     font-weight: bold;
     font-size: ${toString osConfig.taskbar.fontSize}px;
-    color: #9488e3;
+    color: #A1BDCE;
 }
 
 #tray menu separator {
@@ -732,7 +732,7 @@ background: @bar-bg;
     color: #A1BDCE;
     font-size: ${toString osConfig.taskbar.fontSize}px;
     font-weight: 900;
-    font-family: "JetBrains Mono Nerd Font";
+    font-family: "FiraCode Nerd Font Propo";
     background: rgba(23, 23, 23, 0.0);
     opacity: 1;
     margin: 3px 0px 0px 0px;
@@ -792,12 +792,12 @@ padding-left: 4px
 #taskbar,
 #custom-theme,
 #custom-menu{
-color: #E8EDF0;
+color: #A1BDCE;
 background:  rgba(23, 23, 23, 0.0);
 margin: 0px 0px 0px 0px;
     padding-left: 1px;
     padding-right: 1px;
-    opacity: 0.1
+    opacity: 0.9
 }
 #tray,
 #custom-updates,
@@ -805,7 +805,8 @@ margin: 0px 0px 0px 0px;
 #custom-wbar,
 #window{
 color: #A1BDCE;
-font-family: "Martian Mono";
+font-family: "FiraCode Nerd Font Propo";
+font-size: ${toString osConfig.taskbar.fontSize}px
 }
 #custom-l_end,
 #custom-r_end,
@@ -910,7 +911,7 @@ font-weight: normal;
 #custom-expand {
     min-width: 25px;
     color: #A1BDCE;
-    font-size: 16px;
+    font-size: ${toString osConfig.taskbar.fontSize}px;
 }
 
 #group-minimized {
