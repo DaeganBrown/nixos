@@ -62,31 +62,31 @@
       "custom/padd"
     ];
     "custom/steam" = {
-      format = " ";
+      format = "  ";
       on-click = "open-or-focus steam steam";
       tooltip = true;
       tooltip-format = "Steam";
     };
     "custom/vivaldi" = {
-      format = " ";
+      format = "  ";
       on-click = "open-or-focus vivaldi vivaldi";
       tooltip = true;
       tooltip-format = "vivaldi";
     };
     "custom/discord" = {
-      format = " ";
+      format = "  ";
       on-click = "open-or-focus discordptb discord";
       tooltip = true;
       tooltip-format = "Discord";
     };
     "custom/stoat" = {
-      format = "󱌧 ";
+      format = " 󱌧 ";
       on-click = "open-or-focus stoat-desktop stoat";
       tooltip = true;
       tooltip-format = "Stoat";
     };
     "custom/refresh" = {
-      format = " ";
+      format = "  ";
       on-click = "refresh-nix-config-button";
       tooltip = false;
     };
@@ -923,9 +923,19 @@ font-weight: normal;
 #custom-discord,
 #custom-stoat,
 #custom-refresh {
-  font-family: "FiraCode Nerd Font";
-  font-size: ${toString osConfig.taskbar.fontSize}px;
+  font-family: "FiraCode Nerd Font Propo";
+  font-size: ${toString (osConfig.taskbar.fontSize + 2)}px;
   color: #A1BDCE;
+
+}
+#custom-steam:hover,
+#custom-vivaldi:hover,
+#custom-discord:hover,
+#custom-stoat:hover,
+#custom-refresh:hover {
+  color: #C6D7E1;
+  box-shadow: inset 0 -6px 8px -5px #C6D7E1;
+  transition: all 0.2s ease;
 
 }
   '';
