@@ -10,7 +10,7 @@
       position = "bottom";
       marginSide = 10;
       marginTop = 7;
-      fontSize = 30
+      fontSize = 30;
     };
     terminal = "kitty";
     theme = "gruvbox";

@@ -9,6 +9,7 @@
     unixtools.ifconfig
     jq
     kitty
+    lazygit
     neofetch
     pavucontrol
     playerctl
