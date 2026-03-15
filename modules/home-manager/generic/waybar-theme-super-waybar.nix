@@ -63,25 +63,25 @@
     ];
     "custom/steam" = {
       format = " ";
-      on-click = "hyprctl dispatch exec steam";
+      on-click = "open-or-focus steam steam";
       tooltip = true;
       tooltip-format = "Steam";
     };
     "custom/vivaldi" = {
       format = " ";
-      on-click = "hyprctl dispatch exec vivaldi";
+      on-click = "open-or-focus vivaldi vivaldi";
       tooltip = true;
       tooltip-format = "vivaldi";
     };
     "custom/discord" = {
       format = " ";
-      on-click = "hyprctl dispatch exec discordptb";
+      on-click = "open-or-focus discordptb discord";
       tooltip = true;
       tooltip-format = "Discord";
     };
     "custom/stoat" = {
       format = "󱌧 ";
-      on-click = "hyprctl dispatch exec stoat-desktop";
+      on-click = "open-or-focus stoat-desktop stoat";
       tooltip = true;
       tooltip-format = "Stoat";
     };

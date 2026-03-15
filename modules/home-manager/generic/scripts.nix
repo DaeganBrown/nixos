@@ -20,5 +20,16 @@
       notify-send -t 5000 "Process Failed!"
 
     '')
+    (pkgs.writeShellScriptBin "open-or-focus" ''
+      execCommand=$1
+      className=$2
+      running=$(hyprctl -j clients | jq -r ".[] | select(.class ==  \"$className\") | .class")
+      
+      if [[ -n "$running" ]]; then
+        hyprctl dispatch focuswindow "class:^($className)$"
+      else
+        hyprctl dispatch exec "$execCommand"
+      fi
+    '')
   ];
 }

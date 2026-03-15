@@ -7,6 +7,7 @@
     fzf
     git
     unixtools.ifconfig
+    jq
     kitty
     neofetch
     pavucontrol
