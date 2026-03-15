@@ -63,25 +63,25 @@
     ];
     "custom/steam" = {
       format = " ";
-      on-click = "setsid -f steam";
+      on-click = "hyprctl dispatch exec steam";
       tooltip = true;
       tooltip-format = "Steam";
     };
     "custom/vivaldi" = {
       format = " ";
-      on-click = "setsid -f vivaldi";
+      on-click = "hyprctl dispatch exec vivaldi";
       tooltip = true;
       tooltip-format = "vivaldi";
     };
     "custom/discord" = {
       format = " ";
-      on-click = "setsid -f discordptb";
+      on-click = "hyprctl dispatch exec discordptb";
       tooltip = true;
       tooltip-format = "Discord";
     };
     "custom/stoat" = {
       format = "󱌧 ";
-      on-click = "setsid -f stoat-desktop";
+      on-click = "hyprctl dispatch exec stoat-desktop";
       tooltip = true;
       tooltip-format = "Stoat";
     };
