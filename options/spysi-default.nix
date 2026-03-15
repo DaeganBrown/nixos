@@ -5,7 +5,13 @@
 
   config = {
     resolution = [ 1920 1080 ];
-    search_engine = "vivaldi";
+    searchEngine = "vivaldi";
+    taskbar = {
+      position = "bottom";
+      marginSide = 10;
+      marginTop = 7;
+      fontSize = 30
+    };
     terminal = "kitty";
     theme = "gruvbox";
     username = "spysi";

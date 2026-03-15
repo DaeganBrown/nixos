@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, osConfig, ... }:
 
 {
   # config and style taken from super waybar by Anik200
@@ -9,16 +9,16 @@
   };
   programs.waybar.settings.mainBar = {
     layer = "top";
-    position = "top";
+    position = "${osConfig.taskbar.position}";
     # height = 30;
     output = [
       "eDP-1"
       "HDMI-A-1"
     ];
     mod = "docK";
-    margin-left = 10;
-    margin-right = 10;
-    margin-top = 7;
+    margin-left = osConfig.taskbar.marginSide;
+    margin-right = osConfig.taskbar.marginSide;
+    margin-top = osConfig.taskbar.marginTop;
     margin-bottom = 0;
     exclusive = true;
     passthrough = false;
@@ -542,7 +542,7 @@
     font-family: "FiraCode Nerd Font";
     /*font-family: "FiraCode Nerd Font";*/
     font-weight: bold; 
-    font-size: 15px;
+    font-size: ${toString osConfig.taskbar.fontSize}px;
 }
 
 #custom-notification {
@@ -566,7 +566,7 @@ window#waybar {
 tooltip {
         background: #171717;
         color: #A1BDCE;
-        font-size: 13px;
+        font-size: ${toString osConfig.taskbar.fontSize}px;
         border-radius: 7px;
        border: 2px solid #101a24;
 
@@ -654,7 +654,7 @@ background: rgba(23, 23, 23, 0.0);
 #tray menu * {
     min-height: 16px;
     font-weight: bold;
-    font-size: 13px;
+    font-size: ${toString osConfig.taskbar.fontSize}px;
     color: #9488e3;
 }
 
@@ -679,7 +679,7 @@ background:  #161320;
 
 
 #custom-power{
-    font-size: 15px;
+    font-size: ${toString osConfig.taskbar.fontSize}px;
     color: #FFFFFF;
     background:  rgba(22, 19, 32, 0.9);
     margin: 6px 0px 6px 0px;
@@ -691,7 +691,7 @@ background:  #161320;
     color: #2096C0;
     background: rgba(23, 23, 23, 0.0);
     font-weight: normal;
-    font-size: 19px;
+    font-size: ${toString (osConfig.taskbar.fontSize + 4)}px;
     margin: 1px 0px 0px 0px;
     padding-left: 0px;
     padding-right: 2px;
@@ -709,7 +709,7 @@ background:  #161320;
 }
 #battery{
     font-weight: normal;
-    font-size: 22px;
+    font-size: ${toString (osConfig.taskbar.fontSize + 7)}px;
     color: #a6d189;
     background:  rgba(23, 23, 23, 0.0);
     opacity: 1;
@@ -730,7 +730,7 @@ background: @bar-bg;
 }
 #clock{
     color: #A1BDCE;
-    font-size: 15px;
+    font-size: ${toString osConfig.taskbar.fontSize}px;
     font-weight: 900;
     font-family: "JetBrains Mono Nerd Font";
     background: rgba(23, 23, 23, 0.0);
@@ -743,7 +743,7 @@ background: @bar-bg;
 }
 #pulseaudio{
 font-weight: normal;
-font-size: 18px;
+font-size: ${toString (osConfig.taskbar.fontSize + 3)}px;
 color: #6F8FDB;
     background:  rgba(22, 19, 32, 0.0);
     opacity: 1;
@@ -753,7 +753,7 @@ color: #6F8FDB;
 }
 #cpu{
 font-weight: normal;
-font-size: 22px;
+font-size: ${toString (osConfig.taskbar.fontSize + 7)}px;
 color: #915CAF;
 }
 #custom-led{
@@ -770,7 +770,7 @@ margin-right: 6px;
 #language,
 #memory{
 font-weight: normal;
-font-size: 22px;
+font-size: ${toString (osConfig.taskbar.fontSize + 7)}px;
 color: #E4C9AF;
 }
 
@@ -783,7 +783,7 @@ color: #E4C9AF;
 #network{
 color: #A1BDCE;
 font-weight: normal;
-font-size: 19px;
+font-size: ${toString (osConfig.taskbar.fontSize + 4)}px;
 padding-right: 0px;
 padding-left: 4px
 }
@@ -924,7 +924,7 @@ font-weight: normal;
 #custom-stoat,
 #custom-refresh {
   font-family: "FiraCode Nerd Font";
-  font-size: 19px;
+  font-size: ${toString osConfig.taskbar.fontSize}px;
   color: #A1BDCE;
 
 }
