@@ -2,6 +2,7 @@
 
 {
   imports = [
+    # Other
     # Generics
     ../../modules/home-manager/generic/hyprland-core.nix
     ../../modules/home-manager/generic/hyprland-ctrls.nix
@@ -12,12 +13,17 @@
     ../../modules/home-manager/generic/firefox.nix
     ../../modules/home-manager/generic/nvf.nix
     ../../modules/home-manager/generic/scripts.nix
+    ../../modules/home-manager/generic/mako-default.nix
+    ../../modules/home-manager/generic/kitty.nix
+    ../../modules/home-manager/generic/dev.nix
     # Mine
     ../../modules/home-manager/ozy/git.nix
 
     # uh
     inputs.nvf.homeManagerModules.default
+    inputs.nix-colors.homeManagerModules.default
   ];
+  colorScheme = inputs.nix-colors.colorSchemes."${osConfig.theme}";
   home.username = osConfig.username;
   home.homeDirectory = "/home/${osConfig.username}";
 

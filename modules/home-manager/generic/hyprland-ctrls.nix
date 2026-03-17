@@ -22,6 +22,7 @@
         "$mod, up, movefocus, u"
         "$mod, down, movefocus, d"
         "$mod, F, fullscreen"
+        ", PRINT, exec, hyprshot -m region"
       ] ++ (
 	      ## workspaces
 	      builtins.concatLists ( 

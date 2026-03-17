@@ -13,7 +13,7 @@
       fontSize = 15;
     };
     terminal = "kitty";
-    theme = "gruvbox";
+    theme = "gruvbox-dark-medium";
     username = "ozy";
   };
 }

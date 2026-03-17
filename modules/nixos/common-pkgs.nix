@@ -3,7 +3,9 @@
 {
   environment.systemPackages = with pkgs; [
     ags
-    btop 
+    btop
+    base16-schemes
+    flavours
     fzf
     git
     unixtools.ifconfig
@@ -11,12 +13,16 @@
     kitty
     lazygit
     neofetch
+    ocamlPackages.github
+    obsidian
     pavucontrol
     playerctl
+    rsync
     silver-searcher
     stoat-desktop
     tree
     vivaldi
+    vscode
     wget
   ];
 }

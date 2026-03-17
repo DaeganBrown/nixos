@@ -1,4 +1,4 @@
-{ pkgs, osConfig, ... }:
+{ pkgs, config, osConfig, ... }:
 
 {
   # config and style taken from super waybar by Anik200

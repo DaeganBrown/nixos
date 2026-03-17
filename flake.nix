@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nix-colors.url = "github:misterio77/nix-colors";
     hyprland = {
       url = "github:hyprwm/Hyprland";
     };
@@ -18,6 +19,10 @@
 
     nvf = {
       url = "github:NotAShelf/nvf";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    stylix = {
+      url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -74,6 +79,7 @@
             }
 	          ./hosts/ozy-laptop/configuration.nix
 	          inputs.home-manager.nixosModules.default
+            inputs.stylix.nixosModules.stylix
 	        ];
         };
         spysi = nixpkgs.lib.nixosSystem {

@@ -11,6 +11,8 @@
       ../../modules/nixos/radeon.nix
       ../../modules/nixos/discord.nix
       ../../modules/nixos/super-user-rules.nix
+      ../../modules/nixos/stylix.nix
+      # flkae inputs
     ];
 
   # Bootloader.
@@ -88,7 +90,6 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    mako
     libnotify
     swww
 
