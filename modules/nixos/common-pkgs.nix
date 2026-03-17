@@ -24,5 +24,6 @@
     vivaldi
     vscode
     wget
+    zathura
   ];
 }
