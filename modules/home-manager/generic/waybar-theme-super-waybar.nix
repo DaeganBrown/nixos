@@ -572,7 +572,13 @@ tooltip {
 
 
     }
+
+#hyprland-workspaces {
+
+  font-family: "FiraCode Nerd Font Propo";
+}
 #workspaces{
+  font-family: "FiraCode Nerd Font Propo";
 background: rgba(23, 23, 23, 0.0);
     color: #888789;
     box-shadow: none;
@@ -586,6 +592,7 @@ background: rgba(23, 23, 23, 0.0);
 
 
 #workspaces button {
+  font-family: "FiraCode Nerd Font Propo";
 background: rgba(23, 23, 23, 0.0);
     color: #A1BDCE;
     box-shadow: none;
