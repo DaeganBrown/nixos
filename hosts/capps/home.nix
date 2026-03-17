@@ -1,4 +1,4 @@
-{ inputs, config, pkgs, lib, ... }:
+{ inputs, osConfig, pkgs, lib, ... }:
 
 {
   imports = [
@@ -14,6 +14,8 @@
     ../../modules/home-manager/capps/git.nix
     ../../modules/home-manager/generic/scripts.nix
     ../../modules/home-manager/generic/dev.nix
+
+    ../../modules/home-manager/capps/starship.nix
     # uh
     inputs.nvf.homeManagerModules.default
   ];
@@ -38,6 +40,12 @@
   ];
 
   home.file = {
+    bashrc = {
+      target = "/home/${osConfig.username}/.bashrc";
+      text = ''
+eval "$(starship init bash)"
+      '';
+    };
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
