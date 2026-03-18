@@ -5,7 +5,7 @@
 
   config = {
     resolution = [ 3840 2160 ];
-    search_engine = "vivaldi";
+    searchEngine = "vivaldi";
     taskbar = {
       position = "bottom";
       fontSize = 30;
