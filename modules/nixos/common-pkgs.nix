@@ -20,6 +20,7 @@
     rsync
     silver-searcher
     stoat-desktop
+    swayimg
     tree
     vivaldi
     vscode
