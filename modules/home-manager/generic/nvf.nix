@@ -6,6 +6,7 @@
     settings = {
       vim = {
         options = {
+          autoindent = true;
           tabstop = 2;
           shiftwidth = 2;
           softtabstop = 2;
