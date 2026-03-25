@@ -13,7 +13,6 @@
     kitty
     lazygit
     neofetch
-    ocamlPackages.github
     obsidian
     pavucontrol
     playerctl
