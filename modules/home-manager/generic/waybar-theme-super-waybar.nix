@@ -160,7 +160,7 @@
       ];
     };
     "tray" = {
-      icon-size = 16;
+      icon-size = osConfig.taskbar.fontSize;
       show-passive-items = true;
       rotate = 0;
       spacing = 3;
