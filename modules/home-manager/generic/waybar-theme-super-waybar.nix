@@ -41,8 +41,8 @@
       "custom/stoat"
       "custom/spacer"
       "custom/refresh"
-      "custom/spacer"
-      "cava"
+      # "custom/spacer"
+      # "cava"
     ];
     modules-center = [
       "custom/padd"
@@ -241,6 +241,36 @@
       };
     };
     "cava" = {
+      framerate = 30;
+      autosens = 1;
+      sensitivity = 100;
+      bars = 14;
+      lower_cutoff_freq = 1000;
+      higher_cutoff_freq = 10000;
+      hide_on_silence = false;
+      method = "pipewire";
+      source = "auto";
+      stereo = true;
+      bar_delimiter = 0;
+      monstercat = false;
+      waves = false;
+      noise_reduction = 100;
+      input_delay = 2;
+      data_format = "ascii";
+      ascii_max_range = 9;
+      format-icons = [ 
+        "▁" 
+        "▂"
+        "▃"
+        "▄"
+        "▅"
+        "▆"
+        "▇"
+        "█"
+      ];
+      actions = {
+        on-click-right = "mode";
+      };
     };
     "custom/script" = {
       on-click = "~/.config/waybar/volume.sh toggle";
