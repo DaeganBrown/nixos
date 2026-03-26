@@ -3,7 +3,10 @@
 {
   # config and style taken from super waybar by Anik200
   # https://github.com/Anik200/dotfiles/blob/super-waybar/.config/waybar/
-  home.packages = [ pkgs.waybar ];
+  home.packages = [ 
+    pkgs.waybar
+    pkgs.cava
+  ];
   programs.waybar = {
     enable = true;
   };
@@ -38,6 +41,8 @@
       "custom/stoat"
       "custom/spacer"
       "custom/refresh"
+      "custom/spacer"
+      "cava"
     ];
     modules-center = [
       "custom/padd"
@@ -547,6 +552,26 @@
     font-size: ${toString osConfig.taskbar.fontSize}px;
 }
 
+#workspaces,
+#workspaces button,
+#custom-steam,
+#custom-vivaldi,
+#custom-discord,
+#custom-stoat,
+#custom-refresh,
+#battery,
+#pulseaudio,
+#network,
+#cpu,
+#memory,
+#clock,
+#tray {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 #custom-notification {
   font-family: "FiraCode Nerd Font Propo";
   font-size: 17px;
@@ -603,6 +628,7 @@ background: rgba(23, 23, 23, 0.0);
     transition: 0.2s ease;
     padding-left: 4px;
     padding-right: 4px;
+    padding-top: 0;
  /*   animation: ws_normal 20s ease-in-out 1; */
 }
 
@@ -748,6 +774,7 @@ background: @bar-bg;
     padding-left: 10px;
     padding-right: 10px;
     border: none;
+    margin: 0px;
     
 }
 #pulseaudio{
@@ -761,9 +788,11 @@ color: #6F8FDB;
     padding-right: 3px;
 }
 #cpu{
-font-weight: normal;
-font-size: ${toString (osConfig.taskbar.fontSize + 7)}px;
-color: #915CAF;
+  padding-top: 0;
+  padding-bottom: 0;
+  font-weight: normal;
+  font-size: ${toString (osConfig.taskbar.fontSize + 7)}px;
+  color: #915CAF;
 }
 #custom-led{
 background: #427287;
@@ -936,6 +965,10 @@ font-weight: normal;
   font-family: "FiraCode Nerd Font Propo";
   font-size: ${toString (osConfig.taskbar.fontSize + 2)}px;
   color: #A1BDCE;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
 
 }
 #custom-steam:hover,
@@ -947,6 +980,17 @@ font-weight: normal;
   box-shadow: inset 0 -6px 8px -5px #C6D7E1;
   transition: all 0.2s ease;
 
+}
+#cpu,
+#memory {
+  font-family: "FiraCode Nerd Font Propo";
+  font-weight: normal;
+  font-size: ${toString (osConfig.taskbar.fontSize + 7)}px;
+  
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
 }
   '';
 }
