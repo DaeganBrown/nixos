@@ -358,15 +358,17 @@
       format-charging = "<span color='#a6d189'>󱐋</span>";
       format-plugged = "󰂄";
       format-icons = [
-        "󰝦"
-        "󰪞"
-        "󰪟"
-        "󰪠"
-        "󰪡"
-        "󰪢"
-        "󰪣"
-        "󰪤"
-        "󰪥"
+        "󰂎"
+        "󰁺"
+        "󰁻"
+        "󰁼"
+        "󰁽"
+        "󰁾"
+        "󰁿"
+        "󰂀"
+        "󰂁"
+        "󰂂"
+        "󰁹"
       ];
       on-click-right = "pkill waybar & hyprctl dispatch exec waybar";
     };
