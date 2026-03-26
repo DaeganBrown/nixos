@@ -13,16 +13,18 @@
     kitty
     lazygit
     neofetch
-    ocamlPackages.github
     obsidian
     pavucontrol
     playerctl
     rsync
     silver-searcher
     stoat-desktop
+    swayimg
     tree
     vivaldi
     vscode
     wget
+    zathura
+    zip
   ];
 }

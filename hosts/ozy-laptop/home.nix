@@ -16,9 +16,11 @@
     ../../modules/home-manager/generic/mako-default.nix
     ../../modules/home-manager/generic/kitty.nix
     ../../modules/home-manager/generic/dev.nix
+    ../../modules/home-manager/generic/embedded-dev.nix
     # Mine
     ../../modules/home-manager/ozy/git.nix
     ../../modules/home-manager/ozy/starship.nix
+    ../../modules/home-manager/ozy/intellij.nix
 
     # uh
     inputs.nvf.homeManagerModules.default
