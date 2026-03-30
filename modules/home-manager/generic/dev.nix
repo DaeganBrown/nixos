@@ -9,6 +9,6 @@
     gcc
     jdk25_headless 
     plantuml
-    
+    valgrind
   ];
 }
