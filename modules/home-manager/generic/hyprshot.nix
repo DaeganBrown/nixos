@@ -28,7 +28,17 @@
       family = "FiraCode Nerd Font"
       style = "Bold"
     '';
+    
+    
+    # "${config.home.homeDirectory}/pictures/screenshots" = {
+    #   source = ./screenshots;
+    #   recursive = true;
+    # };
     };
+    activation.createSceenshotDir = 
+      lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+        mkdir -p "${config.home.homeDirectory}/pictures/screenshots"
+      '';
     packages = with pkgs; [
       hyprshot
       satty
