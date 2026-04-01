@@ -2,7 +2,6 @@
 
 {
   home.packages = with pkgs; [
-    hyprshot
     hyprlauncher
   ];
   wayland.windowManager.hyprland = {

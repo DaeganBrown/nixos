@@ -18,6 +18,7 @@
     ../../modules/home-manager/generic/dev.nix
     ../../modules/home-manager/generic/embedded-dev.nix
     ../../modules/home-manager/generic/ruby.nix
+    ../../modules/home-manager/generic/hyprshot.nix
     # Mine
     ../../modules/home-manager/ozy/git.nix
     ../../modules/home-manager/ozy/starship.nix
