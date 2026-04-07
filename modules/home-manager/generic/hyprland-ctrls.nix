@@ -49,6 +49,7 @@
       ];
       extraConfig = {
         exec-once = [
+          "pkill swww"
           "sleep 0.5 && swww-daemon"
           "sleep 0.5 && sww img ~/nixos/wallpaper/retrowave-tron-grid.jpg"
           "sleep 0.5 && waybar"
