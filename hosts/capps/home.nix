@@ -47,6 +47,7 @@
       target = "/home/${osConfig.username}/.bashrc";
       text = ''
 eval "$(starship init bash)"
+export PATH="$HOME/.cargo/bin:$PATH"
       '';
     };
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
