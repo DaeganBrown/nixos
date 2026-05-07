@@ -8,6 +8,7 @@
       ../../modules/nixos/steam.nix
       ../../modules/nixos/super-user-rules.nix
       ../../modules/nixos/server/ssh.nix
+      ../../modules/nixos/docker.nix
     ];
 
   # Bootloader.
