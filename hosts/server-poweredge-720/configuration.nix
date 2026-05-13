@@ -9,6 +9,7 @@
       ../../modules/nixos/super-user-rules.nix
       ../../modules/nixos/server/ssh.nix
       ../../modules/nixos/docker.nix
+      ../../modules/server/minecraft-server.nix
     ];
 
   # Bootloader.
@@ -88,7 +89,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     libnotify
-
+    cron
   ];
   system.stateVersion = "25.11"; # Did you read the comment?
 
