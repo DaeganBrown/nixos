@@ -8,10 +8,6 @@
       # "fileManager" = "dolphin";
       "$menu" = "hyprlauncher";
 
-      # gestures, may not be supported in nix. TBD
-      gestures = [
-        "3, horizontal, workspace"
-      ];
       bind = [
 	      "$mod, RETURN, exec, $terminal"
 	      "$mod, S, exec, $menu"
