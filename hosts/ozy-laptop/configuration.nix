@@ -1,4 +1,4 @@
-{ config, pkgs, lib, inputs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports =
@@ -79,6 +79,7 @@
   
   # home manager 
   home-manager = {
+    backupFileExtension = "backup";
     extraSpecialArgs = { inherit inputs; };
     users = {
       "${config.username}" = import ./home.nix;
