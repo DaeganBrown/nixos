@@ -14,7 +14,7 @@
     ../../modules/home-manager/generic/nvf.nix
     ../../modules/home-manager/generic/scripts.nix
     ../../modules/home-manager/generic/mako-default.nix
-    ../../modules/home-manager/generic/kitty.nix
+    # ../../modules/home-manager/generic/kitty.nix
     ../../modules/home-manager/generic/dev.nix
     ../../modules/home-manager/generic/embedded-dev.nix
     ../../modules/home-manager/generic/ruby.nix
