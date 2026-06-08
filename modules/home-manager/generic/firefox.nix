@@ -1,4 +1,4 @@
-{ options, osConfig, lib, pkgs, ... }:
+{ options, osConfig, lib, pkgs, config, ... }:
 
 {
   programs.firefox = {
@@ -14,5 +14,6 @@
        # search.nixos.org/packages
       };
     };
+    configPath = "${config.xdg.configHome}/mozilla/firefox";
   };
 }
