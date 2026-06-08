@@ -1,4 +1,4 @@
-{ options, config, lib, pkgs, ... }:
+{ options, osConfig, lib, pkgs, ... }:
 
 {
   programs.firefox = {
@@ -9,14 +9,10 @@
       # };
     };
 
-    profiles.ozy = {
+    profiles."${osConfig.username}" = {
       bookmarks = {
        # search.nixos.org/packages
       };
-
-      extensions = [
-      # inputs.firefox-addons.packages."x86_64-linux".block-origin
-      ];
     };
   };
 }

@@ -8,6 +8,6 @@ let
 in 
 {
     environment.systemPackages = with pkgs; [
-      discord-ptb
+      obsidian
     ];
 }

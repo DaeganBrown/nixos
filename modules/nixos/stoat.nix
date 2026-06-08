@@ -7,7 +7,7 @@ let
   };
 in 
 {
-    environment.systemPackages = with pkgs; [
-      discord-ptb
+    environment.systemPackages = [
+      unstable.stoat-desktop
     ];
 }

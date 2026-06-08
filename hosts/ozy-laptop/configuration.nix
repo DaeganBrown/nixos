@@ -12,6 +12,8 @@
       ../../modules/nixos/discord.nix
       ../../modules/nixos/super-user-rules.nix
       ../../modules/nixos/stylix.nix
+      ../../modules/nixos/obsidian.nix
+      ../../modules/nixos/vscode.nix
       # flkae inputs
     ];
 

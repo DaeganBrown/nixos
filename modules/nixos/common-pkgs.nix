@@ -12,17 +12,14 @@
     jq
     kitty
     lazygit
-    neofetch
-    obsidian
+    fastfetch
     pavucontrol
     playerctl
     rsync
     silver-searcher
-    stoat-desktop
     swayimg
     tree
     vivaldi
-    vscode
     wget
     zathura
     zip
