@@ -67,6 +67,7 @@
         ozy = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs; };
           modules = [
+            ./options/ozy-default.nix
             ./hosts/ozy/configuration.nix
             inputs.home-manager.nixosModules.default
           ];
