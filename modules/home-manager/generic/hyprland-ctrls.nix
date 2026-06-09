@@ -1,4 +1,4 @@
-{ ... }:
+{ osConfig, ... }:
 
 {
   wayland.windowManager.hyprland = {
@@ -46,7 +46,7 @@
       extraConfig = {
         exec-once = [
           "sleep 0.5 && awww-daemon"
-          "sleep 0.5 && awww img ~/nixos/wallpaper/tron-red-bike.jpg"
+          "sleep 0.5 && awww img ~/nixos/wallpaper/${osConfig.wallpaper}"
           "sleep 0.5 && waybar"
         ];
       };

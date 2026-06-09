@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ ... }:
 
 {
   imports = [ ./options.nix ];
@@ -14,6 +14,7 @@
     };
     terminal = "kitty";
     theme = "gruvbox";
+    wallpaper = "tron-car-landscape.jpg";
     username = "spysi";
   };
 }

@@ -15,6 +15,7 @@ let
   terminal = "kitty";
   theme = "gruvbox";
   username = "default";
+  wallpaper = "retrowave-tron-grid.jpg";
 in
 {
   options = {
@@ -101,6 +102,11 @@ in
       type = types.str;
       default = username;
       description = "The name of the main user";
+    };
+    wallpaper = mkOption {
+      type = types.str;
+      default = wallpaper;
+      description = "Wallpaper file name";
     };
   };
 }
