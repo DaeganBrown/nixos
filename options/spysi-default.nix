@@ -14,7 +14,7 @@
     };
     terminal = "kitty";
     theme = "gruvbox";
-    wallpaper = "tron-car-landscape.jpg";
+    wallpaper = "tron-blue-bike.jpg";
     username = "spysi";
   };
 }

@@ -12,7 +12,7 @@
     };
     terminal = "kitty";
     theme = "gruvbox";
-    wallpaper = "tron-blue-bike.jpg";
+    wallpaper = "tron-red-bike.jpg";
     username = "capps";
   };
 }
