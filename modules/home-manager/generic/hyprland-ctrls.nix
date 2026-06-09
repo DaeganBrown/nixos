@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ ... }:
 
 {
   wayland.windowManager.hyprland = {
@@ -45,13 +45,18 @@
       ];
       extraConfig = {
         exec-once = [
-          "pkill awww"
           "sleep 0.5 && awww-daemon"
-          "sleep 0.5 && sww img ~/nixos/wallpaper/retrowave-tron-grid.jpg"
+          "sleep 0.5 && awww img ~/nixos/wallpaper/tron-red-bike.jpg"
           "sleep 0.5 && waybar"
         ];
       };
+      misc = {
+        disable_hyprland_logo = true;
+        force_default_wallpaper = 0;
+      };
     };
+
+        
     configType = "hyprlang";
   };
 }
