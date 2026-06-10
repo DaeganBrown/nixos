@@ -20,7 +20,7 @@
     ../../modules/home-manager/generic/ruby.nix
     ../../modules/home-manager/generic/hyprshot.nix
     # Mine
-    ../../modules/home-manager/ozy/git.nix
+    ../../modules/home-manager/ozy/pc-git.nix
     ../../modules/home-manager/ozy/starship.nix
     ../../modules/home-manager/ozy/intellij.nix
 
