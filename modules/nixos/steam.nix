@@ -6,5 +6,6 @@
     remotePlay.openFirewall = false;
     dedicatedServer.openFirewall = false;
     localNetworkGameTransfers.openFirewall = false;
+    gamescopeSession.enable = false;
   };
 }

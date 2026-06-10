@@ -8,7 +8,7 @@
       ../../modules/nixos/multi-media.nix 
       ../../modules/nixos/fonts.nix
       ../../modules/nixos/steam.nix
-      ../../modules/nixos/radeon.nix
+      # ../../modules/nixos/radeon.nix
       ../../modules/nixos/discord.nix
       ../../modules/nixos/super-user-rules.nix
       ../../modules/nixos/obsidian.nix
@@ -21,7 +21,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
   services.displayManager.sddm.enable = false;
   # Use latest kernel.
-  boot.kernelPackages = pkgs.linuxPackages_6_18;
+  boot.kernelPackages = pkgs.linuxPackages;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   networking.hostName = "${config.hostName}"; # Define your hostname.
@@ -45,20 +45,24 @@
   };
   
   # hardware
-  hardware.graphics.enable = true;
-  hardware.graphics.enable32Bit = true;
-
+  hardware = {
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+    };
+  };
   # hyprland
   programs.hyprland.enable = true;
   programs.hyprland.package = inputs.hyprland.packages."${pkgs.stdenv.hostPlatform.system}".hyprland;
-
+  security.wrappers.Hyprland.enable = false; 
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
     variant = "";
   };
-  services.xserver.videoDrivers = [ "amdgpu" ];
 
+  # services.xserver.videoDrivers = [ "amdgpu" ];
+  boot.initrd.kernelModules = [ "amdgpu" ];
   # Sounds
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
