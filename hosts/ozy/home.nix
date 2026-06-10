@@ -6,6 +6,7 @@
     # Generics
     ../../modules/home-manager/generic/hyprland-core.nix
     ../../modules/home-manager/generic/hyprland-ctrls.nix
+    ../../modules/home-manager/generic/hyprland-4k.nix
     #../../modules/home-manager/generic/waybar-core.nix
     #../../modules/home-manager/generic/waybar-default.nix
     #../../modules/home-manager/generic/waybar-theme-oldman.nix
