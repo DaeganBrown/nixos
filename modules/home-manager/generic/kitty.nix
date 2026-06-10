@@ -8,7 +8,4 @@
       size = 12;
     };
   };
-  stylix.targets.kitty = {
-    enable = true;
-  };
 }

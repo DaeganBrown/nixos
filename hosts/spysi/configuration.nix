@@ -21,6 +21,7 @@
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_6_18;
 
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   networking.hostName = "nixos"; # Define your hostname.
   networking.networkmanager.enable = true;

@@ -4,13 +4,17 @@
   
   services.mako = {
     enable = true;
-    settings = {
-      backgroundColor = "#${config.colorScheme.palette.base0E}";
-      borderColor = config.colorScheme.palette.base0E;
-      borderRadius = 5;
-      borderSize = 2;
-      textColor = config.colorScheme.palette.base0E;
-      layer = "overlay";
-    };
+    # settings = {
+    #   background-color = "#${config.colorScheme.palette.base0E}";
+    #   border-color = "#${config.colorScheme.colors.base0E}";
+    #   border-radius = 5;
+    #   border-size = 2;
+    #   text-color = "#${config.colorScheme.colors.base0E}";
+    #   layer = "overlay";
+    # };
   };
+  home.packages = [
+    pkgs.mako
+  ];
+  # systemd.user.services.mako.Install.WantedBy = [ "graphical-session.target" ];
 }
