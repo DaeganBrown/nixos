@@ -1,6 +1,7 @@
-{ pkgs, config, osConfig, ... }:
+{ pkgs, osConfig, ... }:
 
 {
+  imports = [ ./fuzzel.nix ];
   # config and style taken from super waybar by Anik200
   # https://github.com/Anik200/dotfiles/blob/super-waybar/.config/waybar/
   home.packages = [ 
@@ -92,8 +93,10 @@
     };
     "custom/refresh" = {
       format = "  ";
-      on-click = "refresh-nix-config-button";
-      tooltip = false;
+      on-click = "nixos-rebuild-menu";
+      on-click-right = "refresh-nix-config-button";
+      tooltip = true;
+      tooltip-format = "Left: rebuild menu  |  Right: quick switch";
     };
 
     "custom/led" = {

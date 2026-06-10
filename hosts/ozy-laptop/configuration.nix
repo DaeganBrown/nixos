@@ -11,7 +11,6 @@
       ../../modules/nixos/radeon.nix
       ../../modules/nixos/discord.nix
       ../../modules/nixos/super-user-rules.nix
-      ../../modules/nixos/stylix.nix
       # flkae inputs
     ];
 
