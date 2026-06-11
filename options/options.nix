@@ -16,6 +16,11 @@ let
   theme = "gruvbox";
   username = "default";
   wallpaper = "retrowave-tron-grid.jpg";
+  font = {
+    base = "FiraCode Nerd Font";
+    mono = "FiraCode Nerd Font Mono";
+    size = 15;
+  };
 in
 {
   options = {
@@ -107,6 +112,27 @@ in
       type = types.str;
       default = wallpaper;
       description = "Wallpaper file name";
+    };
+    font = mkOption {
+      type = types.submodule {
+        options = {
+          base = mkOption {
+            type = types.str;
+            default = font.base;
+            description = "Base font for editors and terminal.";
+          };
+          mono = mkOption {
+            type = types.str;
+            default = font.mono;
+            description = "Monospaced font for editors and terminals.";
+          };
+          size = mkOption {
+            type = types.int;
+            default = font.size;
+            description = "Font size for terminal and editors";
+          };
+        };
+      };
     };
   };
 }

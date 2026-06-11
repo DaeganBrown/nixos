@@ -230,6 +230,10 @@
     };
     "hyprland/workspaces" = {
       format = "{icon}";
+      # format-icons = {
+      #   default = "<span font='25'></span>";
+      #   active = "<span font='25'></span>";
+      # };
       format-icons = {
         default = "";
         active = "";
@@ -633,49 +637,44 @@ tooltip {
 
     }
 
-#hyprland-workspaces {
-
-  font-family: "FiraCode Nerd Font Propo";
+#hyprland-workspaces,
+#workspaces,
+#workspaces button {
+  font-family: "FiraCode Nerd Font Mono";
 }
 #workspaces{
-  font-family: "FiraCode Nerd Font Propo";
-background: rgba(23, 23, 23, 0.0);
-    color: #888789;
-    box-shadow: none;
+  background: rgba(23, 23, 23, 0.0);
+  color: #888789;
+  box-shadow: none;
 	text-shadow: none;
-    border-radius: 9px;
-    transition: 0.2s ease;
-    padding-left: 4px;
-    padding-right: 4px;
-    padding-top: 1px;
+  border-radius: ${toString (osConfig.taskbar.fontSize + 6)}px;
+  transition: 0.2s ease;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 1px;
 }
 
 
 #workspaces button {
-  font-family: "FiraCode Nerd Font Propo";
-background: rgba(23, 23, 23, 0.0);
-    color: #A1BDCE;
-    box-shadow: none;
+  font-size: ${toString osConfig.taskbar.fontSize}px;
+  background: rgba(23, 23, 23, 0.0);
+  color: #A1BDCE;
+  box-shadow: none;
 	text-shadow: none;
-    border-radius: 9px;
-    transition: 0.2s ease;
-    padding-left: 4px;
-    padding-right: 4px;
-    padding-top: 0;
- /*   animation: ws_normal 20s ease-in-out 1; */
+  border-radius: ${toString (osConfig.taskbar.fontSize + 6)}px;
+  transition: 0.2s ease;
+  padding: ${toString (osConfig.taskbar.fontSize / 4)}px ${toString (osConfig.taskbar.fontSize / 3)}px;
+  margin-left: 2px;
+  margin-right: 2px;
+
 }
 
 
 
 #workspaces button.active {
-
- 
-  /* background-image: url("/home/anik/Documents/bar1.png");*/
-    color: #A1BDCE;   
-    transition: all 0.3s ease;
-    padding-left: 4px;
-    padding-right: 4px;
-  /*  transition: all 0.4s cubic-bezier(.55,0.68,.48,1.682); */
+  color: #A1BDCE;   
+  transition: all 0.3s ease;
+  padding: ${toString (osConfig.taskbar.fontSize / 4)}px ${toString (osConfig.taskbar.fontSize / 3)}px;
 }
 
 #workspaces button:hover {

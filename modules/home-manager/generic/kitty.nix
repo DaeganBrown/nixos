@@ -4,8 +4,8 @@
   programs.kitty = {
     enable = true;
     font = {
-      name = lib.mkForce "FiraCode Nerd Font";
-      size = 12;
+      name = "${osConfig.font.mono}";
+      size = osConfig.font.size;
     };
   };
 }
