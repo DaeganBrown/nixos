@@ -12,11 +12,11 @@
           softtabstop = 2;
         };
 
-        theme = {
-          enable = true;
-          name = "gruvbox";
-          style = "dark";
-        };
+        # theme = {
+        #   enable = true;
+        #   name = "gruvbox";
+        #   style = "dark";
+        # };
         lsp.enable = true;
         lsp.servers.nixd.settings.nil.nix.autoArchive = true;
         languages = {

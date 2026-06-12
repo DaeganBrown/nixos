@@ -61,7 +61,6 @@
             ./options/capps-default.nix
             ./hosts/capps/configuration.nix 
             inputs.home-manager.nixosModules.default
-            #nixos-hardware.nixosModules.common-gpu-nvidia-nonprime
           ];
         };
         ozy = nixpkgs.lib.nixosSystem {
@@ -70,6 +69,7 @@
             ./options/ozy-pc.nix
             ./hosts/ozy/configuration.nix
             inputs.home-manager.nixosModules.default
+            inputs.stylix.nixosModules.stylix
           ];
         };
 	      ozy-laptop = nixpkgs.lib.nixosSystem {

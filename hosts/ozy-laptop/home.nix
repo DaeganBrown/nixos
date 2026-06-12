@@ -28,7 +28,6 @@
     inputs.nvf.homeManagerModules.default
     inputs.nix-colors.homeManagerModules.default
   ];
-  colorScheme = inputs.nix-colors.colorSchemes."${osConfig.theme}";
   home.username = osConfig.username;
   home.homeDirectory = "/home/${osConfig.username}";
 

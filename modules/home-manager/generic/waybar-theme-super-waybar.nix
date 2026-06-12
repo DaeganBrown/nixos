@@ -1,7 +1,7 @@
 { pkgs, osConfig, ... }:
 
 {
-  imports = [ ./fuzzel.nix ];
+ # imports = [ ./fuzzel.nix ];
   # config and style taken from super waybar by Anik200
   # https://github.com/Anik200/dotfiles/blob/super-waybar/.config/waybar/
   home.packages = [ 
@@ -19,7 +19,7 @@
       "eDP-1"
       "HDMI-A-1"
     ];
-    mod = "docK";
+    mod = "dock";
     margin-left = osConfig.taskbar.marginSide;
     margin-right = osConfig.taskbar.marginSide;
     margin-top = osConfig.taskbar.marginTop;

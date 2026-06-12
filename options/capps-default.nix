@@ -11,7 +11,7 @@
       fontSize = 15;
     };
     terminal = "kitty";
-    theme = "gruvbox";
+    theme = "tron";
     wallpaper = "tron-red-bike.jpg";
     username = "capps";
   };

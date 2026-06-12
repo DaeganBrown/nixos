@@ -13,7 +13,7 @@
       fontSize = 15;
     };
     terminal = "kitty";
-    theme = "gruvbox";
+    theme = "tron";
     wallpaper = "tron-blue-bike.jpg";
     username = "spysi";
   };

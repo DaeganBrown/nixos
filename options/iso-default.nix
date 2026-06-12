@@ -6,7 +6,7 @@
   config = {
     resolution = [ 1920 1080 ];
     terminal = "kitty";
-    theme = "gruvbox";
+    theme = "tron";
     username = "user";
   };
 }

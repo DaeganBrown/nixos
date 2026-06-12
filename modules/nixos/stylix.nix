@@ -1,9 +1,0 @@
-{ config, pkgs, ...}:
-
-{
-  stylix = {
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/${config.theme}.yaml";
-    autoEnable = false;
-    enable = true;
-  };
-}

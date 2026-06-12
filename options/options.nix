@@ -13,7 +13,7 @@ let
     fontSize = 15;
   };
   terminal = "kitty";
-  theme = "gruvbox";
+  theme = "tron";
   username = "default";
   wallpaper = "retrowave-tron-grid.jpg";
   font = {

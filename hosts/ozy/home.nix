@@ -10,7 +10,7 @@
     #../../modules/home-manager/generic/waybar-core.nix
     #../../modules/home-manager/generic/waybar-default.nix
     #../../modules/home-manager/generic/waybar-theme-oldman.nix
-    ../../modules/home-manager/generic/waybar-theme-super-waybar.nix
+    # ../../modules/home-manager/generic/waybar-theme-super-waybar.nix
     ../../modules/home-manager/generic/firefox.nix
     ../../modules/home-manager/generic/nvf.nix
     ../../modules/home-manager/generic/scripts.nix
@@ -24,12 +24,13 @@
     ../../modules/home-manager/ozy/pc-git.nix
     ../../modules/home-manager/ozy/starship.nix
     ../../modules/home-manager/ozy/intellij.nix
+    ../../modules/home-manager/generic/stylix.nix
+    ../../modules/home-manager/generic/fuzzel.nix
 
     # uh
     inputs.nvf.homeManagerModules.default
     inputs.nix-colors.homeManagerModules.default
   ];
-  colorScheme = inputs.nix-colors.colorSchemes."${osConfig.theme}";
   home.username = osConfig.username;
   home.homeDirectory = "/home/${osConfig.username}";
 

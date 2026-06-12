@@ -89,6 +89,9 @@
     users = {
       "${config.username}" = import ./home.nix;
     };
+    sharedModules = [
+      inputs.stylix.homeModules.stylix
+    ];
   };
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];

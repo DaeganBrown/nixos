@@ -2,6 +2,7 @@
 
 {
   home.packages = [
+    pkgs.wlr-randr
     # NixOS tools
     (pkgs.writeShellScriptBin "check-builds" ''
       nix-env --list-generations
@@ -45,12 +46,67 @@
       fi
     '')
     (pkgs.writeShellScriptBin "nixos-rebuild-menu" ''
-      CHOICE=$(printf "  Switch\n  Test\n  Boot" | fuzzel --dmenu --prompt "rebuild ❯  " --width 20 --lines 3)
+      SCREEN_W=$(${pkgs.wlr-randr}/bin/wlr-randr 2>/dev/null \
+        | grep -oP '\d+x\d+' | head -1 | cut -dx -f1)
+
+      if [ -z "$SCREEN_W" ]; then
+        SCREEN_W=1920
+      fi
+
+      if [ "$SCREEN_W" -ge 3840 ]; then
+        WIDTH=40; LINES=6; FONT_SIZE=14
+      elif [ "$SCREEN_W" -ge 2560 ]; then
+        WIDTH=32; LINES=5; FONT_SIZE=12
+      else
+        WIDTH=24; LINES=4; FONT_SIZE=11
+      fi
+
+      CHOICE=$(printf \
+        "⬡  SWITCH\n⬡  TEST\n⬡  BOOT" \
+        | fuzzel --dmenu \
+          --prompt "SYSTEM ❯  " \
+          --width "$WIDTH" \
+          --lines "$LINES" \
+          --font "monospace:size=$FONT_SIZE" \
+          --inner-pad 12 \
+          --line-height 28)
+
       case "$CHOICE" in
-        *"Switch") refresh-nix-config-button switch ;;
-        *"Test")   refresh-nix-config-button test   ;;
-        *"Boot")   refresh-nix-config-button boot   ;;
+        *"SWITCH"*) refresh-nix-config-button switch ;;
+        *"TEST"*)   refresh-nix-config-button test   ;;
+        *"BOOT"*)   refresh-nix-config-button boot   ;;
       esac
+    '')
+    (pkgs.writeShellScriptBin "get-media-name" ''
+      active_player=""
+      for p in $(playerctl -l 2>/dev/null); do
+        status=$(playerctl --player="$p" status 2>/dev/null)
+        if [ "$status" = "Playing" ]; then
+          active_player="$p"
+          break
+        fi
+      done
+      if [ -z "$active_player" ]; then
+        echo ""
+        exit 0
+      fi
+      title=$(playerctl --player="$active_player" metadata title 2>/dev/null)
+      artist=$(playerctl --player="$active_player" metadata artist 2>/dev/null)
+      if [ -z "$title" ]; then
+        echo ""
+      else
+        if [ -z "$artist" ]; then
+          text="$title"
+        else
+          text="$artist - $title"
+        fi
+        len=$(echo -n "$text" | wc -c)
+        if [ "$len" -gt 40 ]; then
+          text=$(echo -n "$text" | cut -c1-37)
+          text="$text..."
+        fi
+        echo "{\"text\": \"$text\", \"class\": \"$active_player\"}"
+      fi
     '')
   ];
 }
