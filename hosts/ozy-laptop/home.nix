@@ -9,7 +9,7 @@
     #../../modules/home-manager/generic/waybar-core.nix
     #../../modules/home-manager/generic/waybar-default.nix
     #../../modules/home-manager/generic/waybar-theme-oldman.nix
-    ../../modules/home-manager/generic/waybar-theme-super-waybar.nix
+    # ../../modules/home-manager/generic/waybar-theme-super-waybar.nix
     ../../modules/home-manager/generic/firefox.nix
     ../../modules/home-manager/generic/nvf.nix
     ../../modules/home-manager/generic/scripts.nix
@@ -23,6 +23,7 @@
     ../../modules/home-manager/ozy/git.nix
     ../../modules/home-manager/ozy/starship.nix
     ../../modules/home-manager/ozy/intellij.nix
+    ../../modules/home-manager/generic/stylix.nix
 
     # uh
     inputs.nvf.homeManagerModules.default
