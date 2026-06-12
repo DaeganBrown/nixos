@@ -10,11 +10,12 @@
       position = "top";
       marginSide = 10;
       marginTop = 7;
-      fontSize = 30;
+      fontSize = 15;
     };
     terminal = "kitty";
     theme = "gruvbox-dark-medium";
     wallpaper = "tron-red-bike.jpg";
     username = "ozy";
+    font.size = 10;
   };
 }

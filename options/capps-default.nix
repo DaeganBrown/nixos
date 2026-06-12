@@ -8,7 +8,7 @@
     searchEngine = "vivaldi";
     taskbar = {
       position = "bottom";
-      fontSize = 30;
+      fontSize = 15;
     };
     terminal = "kitty";
     theme = "gruvbox";
