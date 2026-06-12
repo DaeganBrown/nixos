@@ -37,6 +37,7 @@
 
   home.packages = [
     pkgs.hello
+    pkgs.prismlauncher
 
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
@@ -86,6 +87,8 @@ eval "$(starship init bash)"
   #
   home.sessionVariables = {
     EDITOR = "nvim";
+    GDK_SCALE = "2";
+    GDK_DPI_SCALE  = "0.5";
   };
 
   # Let Home Manager install and manage itself.
