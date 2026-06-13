@@ -1,6 +1,9 @@
 { pkgs, osConfig, ... }:
 
 {
+  imports = [ 
+    ./fuzzel.nix
+  ];
   home.packages = [
     pkgs.wlr-randr
     # NixOS tools
