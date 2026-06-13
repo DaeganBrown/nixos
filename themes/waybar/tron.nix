@@ -1,4 +1,4 @@
-{ pkgs, osConfig, ... }:
+{ pkgs, config, osConfig, ... }:
 
 {
   home.packages = [
@@ -50,7 +50,6 @@
         "network"
         "group/audio"
         "group/backlight"
-        "group/power"
         "memory"
         "cpu"
         "clock"
@@ -119,11 +118,7 @@
         tooltip-format = "Left: rebuild menu | Right: quick switch";
       };
       "custom/media" = {
-        format = "{icon} {text}";
-        format-icons = {
-          spotify = "";
-          default = "🎵";
-        };
+        format = "{text}";
         exec = "get-media-name";
         exec-if = "playerctl --all-players status 2>/dev/null | grep -qE 'Playing'";
         tooltip = false;
@@ -202,18 +197,147 @@
           "pulseaudio/slider"
         ];
       };
-      "group/backlight" = {};
-      "group/power" = {};
-      "memory" = {};
-      "cpu" = {};
-      "clock" = {};
+      "pulseaudio" = {
+        format = "{icon}";
+        rotate = 0;
+        format-muted = "󰖁";
+        tooltip-format = "{icon} {desc} // {volume}%";
+        scroll-step = 5;
+        format-icons = {
+          default = [
+            "󰕿"
+            "󰖀"
+            "󰕾"
+          ];
+        };
+      };
+      "pulseaudio/slider" = {
+        orientation = "horizontal";
+        min = 5;
+        max = 100;
+        rotate = 0;
+        device = "pulseaudio";
+        scroll-step = 1;
+      };
+      "group/backlight" = {
+        orientation = "horizontal";
+        drawer = {
+          transition-duration = 600;
+          transition-to-left = true;
+          click-to-reveal = true;
+        };
+        modules = [
+          "backlight"
+          "backlight/slider"
+          "custom/smallspacer"
+        ];
+      };
+      "backlight" = {
+        device = "amdgpu_bl1";
+        rotate = 0;
+        format = "{icon}";
+        format-icons = [
+          "󰃞"
+          "󰃝"
+          "󰃟"
+          "󰃠"
+        ];
+        scroll-step = 1;
+        min-length = 2;
+      };
+      "backlight/slider" = {
+        min = 5;
+        max = 100;
+        rotate = 0;
+        device = "intel_backlight";
+        scroll-step = 1;
+      };
+      "memory" = {
+        interval = 1;
+        rotate = 0;
+        format = "{icon}";
+        format-icons = [
+          "󰋙"
+          "󰫃"
+          "󰫄"
+          "󰫅"
+          "󰫆"
+          "󰫇"
+          "󰫈"
+        ];
+      };
+      "cpu" = {
+        interval = 1;
+        rotate = 0;
+        format = "{icon}";
+        format-icons = [
+          "󰋙"
+          "󰫃"
+          "󰫄"
+          "󰫅"
+          "󰫆"
+          "󰫇"
+          "󰫈"
+        ];
+      };
+      "clock" = {
+        format = "{:%I:%M %p}";
+        rotate = 0;
+        tooltip-format = "<tt>{calendar}</tt>";
+        calendar = {
+          mode = "month";
+          mode-mon-col = 3;
+          on-scoll = 1;
+          on-click = "shift_reset";
+          on-click-right = "mode";
+          format = 
+          let 
+            c = config.lib.stylix.colors.withHashtag;
+          in {
+            months   = "<span color='${c.base07}'><b>{}</b></span>";
+            days     = "<span color='${c.base05}'>{}</span>";
+            weeks    = "<span color='${c.base03}'><b>W{}</b></span>";
+            weekdays = "<span color='${c.base0C}'><b>{}</b></span>";
+            today    = "<span color='${c.base00}' bgcolor='${c.base0C}'><b>{}</b></span>";
+          };
+        };
+        actions = {
+          on-click-right = "mode";
+        };
+      };
       "custom/notification" = {};
-      "battery" = {};
+      "battery" = {
+        states = {
+          good = 95;
+          warning = 30;
+          critical = 20;
+        };
+        format = "{icon}";
+        rotate = 0;
+        format-plugged = "󰂄";
+        format-icons = [
+          "󰂎"
+          "󰁺"
+          "󰁻"
+          "󰁼"
+          "󰁽"
+          "󰁾"
+          "󰁿"
+          "󰂀"
+          "󰂁"
+          "󰂂"
+          "󰁹"
+        ];
+        on-click-right = "pkill waybar & hyprctl dispatch exec waybar";
+      };
     };
     style = ''
-* {
-  font-family: "JetBrainsMono Nerd Font Propo";
-}
-    '';
+      window#waybar { font-size: ${toString osConfig.taskbar.fontSize}px; }
+    '' + builtins.readFile (./styles + "/${osConfig.theme}-style.css");
+#       ''V
+# * {
+#   font-family: "JetBrainsMono Nerd Font Propo";
+# }
+#     '';
   };
 }

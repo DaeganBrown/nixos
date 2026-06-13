@@ -15,6 +15,7 @@
     ../../modules/home-manager/generic/scripts.nix
     ../../modules/home-manager/generic/dev.nix
     ../../modules/home-manager/generic/hyprshot.nix
+    ../../modules/home-manager/generic/mako-default.nix
 
     ../../modules/home-manager/capps/starship.nix
     # uh

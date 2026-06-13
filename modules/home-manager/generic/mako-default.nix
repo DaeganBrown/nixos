@@ -13,8 +13,8 @@
       max-timeout=10000
     '';
   };
-  # home.packages = [
-  #   pkgs.mako
-  # ];
+  home.packages = [
+    pkgs.libnotify
+  ];
   # systemd.user.services.mako.Install.WantedBy = [ "graphical-session.target" ];
 }
