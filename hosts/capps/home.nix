@@ -17,7 +17,7 @@
     ../../modules/home-manager/generic/hyprshot.nix
     ../../modules/home-manager/generic/stylix.nix
     ../../modules/home-manager/generic/mako-default.nix
-
+    ../../modules/home-manager/generic/kitty.nix
     ../../modules/home-manager/capps/starship.nix
     # uh
     inputs.nvf.homeManagerModules.default
