@@ -9,9 +9,9 @@
       border-radius = 0;
       border-size = 2;
     };
-    extraConfig = ''
-      max-timeout=10000
-    '';
+    # extraConfig = ''
+    #   max-timeout=10000
+    # '';
   };
   home.packages = [
     pkgs.libnotify
