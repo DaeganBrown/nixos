@@ -61,6 +61,7 @@
             ./options/capps-default.nix
             ./hosts/capps/configuration.nix 
             inputs.home-manager.nixosModules.default
+            inputs.stylix.nixosModules.stylix
           ];
         };
         ozy = nixpkgs.lib.nixosSystem {
