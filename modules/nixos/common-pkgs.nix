@@ -10,7 +10,6 @@
     git
     unixtools.ifconfig
     jq
-    kitty
     lazygit
     fastfetch
     pavucontrol
