@@ -20,9 +20,8 @@
     ../../modules/home-manager/generic/ruby.nix
     ../../modules/home-manager/generic/hyprshot.nix
     # Mine
-    ../../modules/home-manager/ozy/git.nix
-    ../../modules/home-manager/ozy/starship.nix
-    ../../modules/home-manager/ozy/intellij.nix
+    # ../../modules/home-manager/capps-laptop/git.nix
+    ../../modules/home-manager/capps/starship.nix
     ../../modules/home-manager/generic/stylix.nix
 
     # uh
