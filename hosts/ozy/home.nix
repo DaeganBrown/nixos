@@ -26,6 +26,7 @@
     ../../modules/home-manager/ozy/intellij.nix
     ../../modules/home-manager/generic/stylix.nix
     ../../modules/home-manager/generic/fuzzel.nix
+    ../../modules/home-manager/generic/thunar.nix
 
     # uh
     inputs.nvf.homeManagerModules.default

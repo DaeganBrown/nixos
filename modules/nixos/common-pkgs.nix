@@ -12,6 +12,7 @@
     jq
     lazygit
     fastfetch
+    kdePackages.filelight
     pavucontrol
     playerctl
     rsync

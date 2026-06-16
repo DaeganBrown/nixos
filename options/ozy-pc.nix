@@ -14,7 +14,7 @@
     };
     terminal = "kitty";
     theme = "tron";
-    wallpaper = "tron-red-bike.jpg";
+    wallpaper = "tron-car-landscape.jpg";
     username = "ozy";
     font.size = 10;
   };
