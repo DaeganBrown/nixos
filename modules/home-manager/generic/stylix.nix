@@ -16,8 +16,12 @@
       waybar.enable = true;
       gtk.enable = true;
       qt.enable = true;
+      # zen-browser = {
+      #   enable = true;
+      #   profileNames = [ "${osConfig.username}" ];
+      # };
     };
-    iconTheme = {
+    icons = {
       enable = true;
       package = pkgs.papirus-icon-theme;
       dark = "Papirus-Dark";

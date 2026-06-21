@@ -4,7 +4,10 @@
   imports = [ ./options.nix ];
 
   config = {
-    resolution = [ 1920 1080 ];
+    resolution = {
+      horizontal = "3840";
+      vertical = "2160";
+    };
     searchEngine = "vivaldi";
     taskbar = {
       position = "bottom";

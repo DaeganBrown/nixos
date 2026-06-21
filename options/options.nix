@@ -4,7 +4,10 @@ with lib;
 let 
   device = "";
   hostName = "nixos";
-  resolution = [ 1920 1080 ];
+  resolution = {
+    horizontal = 1920;
+    vertical = 1080;
+  };
   searchEngine = "vivaldi";
   taskbar = {
     position = "top";
@@ -21,6 +24,7 @@ let
     mono = "FiraCode Nerd Font Mono";
     size = 15;
   };
+  monitor = "HDMI-A-1";
 in
 {
   options = {
@@ -35,13 +39,36 @@ in
       description = "Hostname of device";
     };
     resolution = mkOption {
-      type = types.listOf types.int;
-      default = resolution;
-      description = "The resolution values of the screen";
-      example = [
-        [ 1920 1080 ]
-        [ 3840 2160 ]
-      ];
+      type = types.submodule {
+        options = {
+          horizontal = mkOption {
+            type = types.int;
+            default = resolution.horizontal;
+            description = "The horizontal pixel count";
+            example= [
+              "1920"
+              "2560"
+              "3840"
+            ];
+          };
+          vertical = mkOption {
+            type = types.int;
+            default = resolution.vertical;
+            description = "The vertical pixel count";
+            example = [
+              "1080"
+              "1440"
+              "2160"
+            ];
+          };
+        };
+      };
+      # default = resolution;
+      # description = "The resolution values of the screen";
+      # example = [
+      #   [ 1920 1080 ]
+      #   [ 3840 2160 ]
+      # ];
     };
     searchEngine = mkOption {
       type = types.str;
@@ -112,6 +139,11 @@ in
       type = types.str;
       default = wallpaper;
       description = "Wallpaper file name";
+    };
+    monitor = mkOption {
+      type = types.str;
+      default = monitor;
+      description = "Monitor to use for hyprland";
     };
     font = mkOption {
       type = types.submodule {

@@ -4,7 +4,10 @@
   imports = [ ./options.nix ];
 
   config = {
-    resolution = [ 1920 1080 ];
+    resolution = {
+      horizontal = 1920;
+      vertical = 1200;
+    };
     searchEngine = "vivaldi";
     taskbar = {
       position = "top";
@@ -16,5 +19,6 @@
     theme = "tron";
     wallpaper = "tron-red-bike.jpg";
     username = "ozy";
+    monitor = "eDP-1";
   };
 }

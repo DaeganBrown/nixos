@@ -6,7 +6,7 @@
       "$mod" = "SUPER";
       "$terminal" = "kitty";
       "$fileManager" = "thunar";
-      "$menu" = "hyprlauncher";
+      "$menu" = "fuzzel";
 
       bind = [
 	      "$mod, RETURN, exec, $terminal"

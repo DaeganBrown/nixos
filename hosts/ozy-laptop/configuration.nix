@@ -13,6 +13,7 @@
       ../../modules/nixos/super-user-rules.nix
       ../../modules/nixos/obsidian.nix
       ../../modules/nixos/vscode.nix
+      ../../modules/nixos/printer.nix
     ];
 
   # Bootloader.
@@ -44,7 +45,10 @@
   };
   
   # hardware
-  hardware.graphics.enable = true;
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
 
   # hyprland
   programs.hyprland.enable = true;
@@ -84,6 +88,7 @@
     };
     sharedModules = [
       inputs.stylix.homeModules.stylix
+      inputs.zen-browser.homeModules.beta
     ];
   };
   xdg.portal.enable = true;
