@@ -242,6 +242,8 @@
           "󰃟"
           "󰃠"
         ];
+        tooltip = true;
+        tooltip-format = "{percent}%";
         scroll-step = 1;
         min-length = 2;
       };

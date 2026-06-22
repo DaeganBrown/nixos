@@ -1,4 +1,4 @@
-{ inputs, pkgs, osConfig, ... }:
+{ inputs, pkgs, osConfig, lib, ... }:
 
 {
   imports = [ (inputs.self + "/themes/waybar/${osConfig.theme}.nix") ];
@@ -23,17 +23,18 @@
     };
     fonts = {
       monospace = {
-        package = pkgs.nerd-fonts.jetbrains-mono;
-        name = "JetBrainsMono Nerd Font";
+        package = lib.mkDefault pkgs.nerd-fonts.jetbrains-mono;
+        name = lib.mkDefault "JetBrainsMono Nerd Font";
       };
       sizes = {
-        terminal = osConfig.font.size;
+        terminal = lib.mkDefault osConfig.font.size;
+        desktop = lib.mkDefault osConfig.font.size;
       };
     };
     opacity = {
-      terminal = 0.85;
-      popups = 0.90;
-      desktop = 0.85;
+      terminal = lib.mkDefault 0.85;
+      popups = lib.mkDefault 0.90;
+      desktop = lib.mkDefault 0.85;
     };
   }; 
   wayland.windowManager.hyprland.settings = {
