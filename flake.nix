@@ -26,6 +26,11 @@
       url = "github:nix-community/stylix/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
   };
 
   outputs = { self, nixpkgs, ... }@inputs:
@@ -61,6 +66,7 @@
             ./options/capps-default.nix
             ./hosts/capps/configuration.nix 
             inputs.home-manager.nixosModules.default
+            inputs.stylix.nixosModules.stylix
           ];
         };
         capps-laptop = nixpkgs.lib.nixosSystem {
@@ -90,6 +96,7 @@
             ./options/ozy-default.nix
             {
               device = "-laptop";
+              font.size = 11;
             }
 	          ./hosts/ozy-laptop/configuration.nix
 	          inputs.home-manager.nixosModules.default

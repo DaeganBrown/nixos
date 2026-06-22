@@ -11,6 +11,7 @@
     ../../modules/home-manager/generic/nvf.nix
     ../../modules/home-manager/spysi/git.nix
     ../../modules/home-manager/generic/scripts.nix
+    ../../modules/home-manager/generic/stylix.nix
 
     # uh
     inputs.nvf.homeManagerModules.default
@@ -69,5 +70,7 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-
+  wayland.windowManager.hyprland.extraConfig = ''
+    exec-conce = ~/.config/hypr/scripts/window-close-sound.sh
+  '';
 }

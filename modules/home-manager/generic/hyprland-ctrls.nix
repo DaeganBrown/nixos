@@ -5,8 +5,8 @@
     settings = {
       "$mod" = "SUPER";
       "$terminal" = "kitty";
-      # "fileManager" = "dolphin";
-      "$menu" = "hyprlauncher";
+      "$fileManager" = "thunar";
+      "$menu" = "fuzzel";
 
       bind = [
 	      "$mod, RETURN, exec, $terminal"
@@ -18,6 +18,7 @@
         "$mod, up, movefocus, u"
         "$mod, down, movefocus, d"
         "$mod, F, fullscreen"
+        "$mod, E, exec, $fileManager"
       ] ++ (
 	      ## workspaces
 	      builtins.concatLists ( 

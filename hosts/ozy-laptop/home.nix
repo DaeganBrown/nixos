@@ -6,6 +6,7 @@
     # Generics
     ../../modules/home-manager/generic/hyprland-core.nix
     ../../modules/home-manager/generic/hyprland-ctrls.nix
+    ../../modules/home-manager/generic/hyprland-1920-1200.nix
     #../../modules/home-manager/generic/waybar-core.nix
     #../../modules/home-manager/generic/waybar-default.nix
     #../../modules/home-manager/generic/waybar-theme-oldman.nix
@@ -20,9 +21,10 @@
     ../../modules/home-manager/generic/ruby.nix
     ../../modules/home-manager/generic/hyprshot.nix
     # Mine
-    ../../modules/home-manager/ozy/git.nix
+    ../../modules/home-manager/ozy/git-laptop.nix
     ../../modules/home-manager/ozy/starship.nix
     ../../modules/home-manager/ozy/intellij.nix
+    ../../modules/home-manager/ozy/zen.nix
     ../../modules/home-manager/generic/stylix.nix
 
     # uh

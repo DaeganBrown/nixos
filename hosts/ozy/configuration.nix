@@ -13,6 +13,7 @@
       ../../modules/nixos/super-user-rules.nix
       ../../modules/nixos/obsidian.nix
       ../../modules/nixos/vscode.nix
+      ../../modules/nixos/thunar.nix
       # flkae inputs
     ];
 
@@ -93,8 +94,14 @@
       inputs.stylix.homeModules.stylix
     ];
   };
-  xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    config.common = {
+        default = [ "hyprland" "gtk" ];
+        "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
+      };
+  };
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 

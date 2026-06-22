@@ -6,7 +6,7 @@
     ../../modules/home-manager/generic/hyprland-core.nix
     ../../modules/home-manager/generic/hyprland-ctrls.nix
     ../../modules/home-manager/generic/hyprland-4k.nix
-    ../../modules/home-manager/generic/waybar-theme-super-waybar.nix
+    # ../../modules/home-manager/generic/waybar-theme-super-waybar.nix
   
   
     #../../modules/home-manager/generic/firefox.nix
@@ -15,8 +15,9 @@
     ../../modules/home-manager/generic/scripts.nix
     ../../modules/home-manager/generic/dev.nix
     ../../modules/home-manager/generic/hyprshot.nix
+    ../../modules/home-manager/generic/stylix.nix
     ../../modules/home-manager/generic/mako-default.nix
-
+    ../../modules/home-manager/generic/kitty.nix
     ../../modules/home-manager/capps/starship.nix
     # uh
     inputs.nvf.homeManagerModules.default

@@ -4,7 +4,10 @@
   imports = [ ./options.nix ];
 
   config = {
-    resolution = [ 1920 1080 ];
+    resolution = {
+      horizontal = 3840;
+      vertical = 2160;
+    };
     searchEngine = "vivaldi";
     taskbar = {
       position = "top";
@@ -14,7 +17,7 @@
     };
     terminal = "kitty";
     theme = "tron";
-    wallpaper = "tron-red-bike.jpg";
+    wallpaper = "tron-car-landscape.jpg";
     username = "ozy";
     font.size = 10;
   };
