@@ -54,5 +54,45 @@
       "ignorezero, fuzzel"
     ]; 
   };
+  home.packages = with pkgs; [ jq socat ];
+  home.file.".config/hypr/scripts/window-close-sound.sh" = {
+    executable = true;
+    text = ''
+      #!/usr/bin/env bash
 
+      SOCKET="$XDG_RUNTIME_DIR/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock"
+      declare -A classes
+
+      # Populate existing windows
+      while IFS=$'\t' read -r addr class; do 
+        classes["$addr"]="$class"
+      done < <(
+        hyprctl clients -j | jq -r '.[] | "\(.address)\t\(.class)"'
+      )
+
+      socat - UNIX-CONNECT:"$SOCKET" | while read -r line; do 
+        case "$line" in 
+
+          openwindow*)
+            hyprctl clients -j | jq -r '.[] | "\(.address)\t\(.class)"' |
+            while IFS=$'\t' read -r addr class; do 
+              classes["$addr"]="$class"
+            done
+            ;;
+
+          closewindow*)
+            addr="''${line#*>>}"
+
+            class="''${classes[$addr]}"
+
+            if [[ "$class" != "kitty" ]]; then
+              pw-play "$HOME/nixos/themes/audio/tron/end-of-line.mp3" >/dev/null 2>&1 &
+            fi
+
+            unset classes["$addr"]
+            ;;
+        esac
+      done
+    '';
+  };
 }

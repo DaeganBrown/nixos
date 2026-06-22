@@ -70,5 +70,7 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-
+  wayland.windowManager.hyprland.extraConfig = ''
+    exec-conce = ~/.config/hypr/scripts/window-close-sound.sh
+  '';
 }
