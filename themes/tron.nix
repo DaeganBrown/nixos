@@ -1,4 +1,4 @@
-{ inputs, pkgs, osConfig, lib, ... }:
+{ inputs, pkgs, osConfig, lib, config, ... }:
 
 {
   imports = [ (inputs.self + "/themes/waybar/${osConfig.theme}.nix") ];
@@ -32,7 +32,6 @@
       };
     };
     opacity = {
-      terminal = lib.mkDefault 0.85;
       popups = lib.mkDefault 0.90;
       desktop = lib.mkDefault 0.85;
     };
@@ -40,8 +39,8 @@
   wayland.windowManager.hyprland.settings = {
     general = {
       border_size = 2;
-      "col.active_border" = "rgba(4ffffffe) rgba(4fb3ffee) 45deg";
-      "col.inactive_border" = "rgba(0a162888)";
+      "col.active_border" = "rgba(${config.lib.stylix.colors.base0C}ee) rgba(${config.lib.stylix.colors.base0D}ee) 45deg";
+      "col.inactive_border" = "rgba(${config.lib.stylix.colors.base09}ee) rgba(${config.lib.stylix.colors.base08}ee) 45deg)";
     };
     decoration.blur = {
       enabled = true;
@@ -49,12 +48,40 @@
       passes = 2;
       vibrancy = 0.2;
     };
+    decoration = {
+      active_opacity = 0.85;
+      inactive_opacity = 0.7;
+    };
     layyerrule = [ 
       "blur, notifications"
       "blur, fuzzel"
       "ignorezero, fuzzel"
     ]; 
   };
+
+  #======================================================================#
+  #= Animations                                                         =#
+  #======================================================================#
+
+  wayland.windowManager.hyprland.settings = {
+    animations = {
+      enabled = true;
+
+      bezier = [
+        "easeOutCubic, 0.33, 1, 0.68, 1"
+      ];
+
+      animation = [
+      ];
+    };
+
+    windowrule = [
+      "border_size 0,fullscreen true"
+    ];
+  };
+  #======================================================================#
+  #= Shell Scripts                                                      =#
+  #======================================================================#
   home.packages = with pkgs; [ jq socat ];
   home.file.".config/hypr/scripts/window-close-sound.sh" = {
     executable = true;

@@ -9,6 +9,7 @@
       "$menu" = "fuzzel";
 
       bind = [
+        # General Keybindings
 	      "$mod, RETURN, exec, $terminal"
 	      "$mod, S, exec, $menu"
         "$mod, V, togglefloating,"
@@ -17,8 +18,13 @@
         "$mod, right, movefocus, r"
         "$mod, up, movefocus, u"
         "$mod, down, movefocus, d"
+        "$mod SHIFT, left, movewindow, l"
+        "$mod SHIFT, right, movewindow, r"
+        "$mod SHIFT, up, movewindow, u"
+        "$mod SHIFT, down, movewindow, d"
         "$mod, F, fullscreen"
         "$mod, E, exec, $fileManager"
+        "$mod SHIFT, C, exec, hyprctl dispatch centerwindow"
       ] ++ (
 	      ## workspaces
 	      builtins.concatLists ( 
