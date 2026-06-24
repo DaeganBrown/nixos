@@ -1,4 +1,4 @@
-{ osConfig, ... }:
+{ ... }:
 
 {
   wayland.windowManager.hyprland.settings = {

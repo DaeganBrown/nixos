@@ -7,7 +7,8 @@
       "$terminal" = "kitty";
       "$fileManager" = "thunar";
       "$menu" = "fuzzel";
-
+      
+      input.touchpad.natural_scroll = true;
       bind = [
         # General Keybindings
 	      "$mod, RETURN, exec, $terminal"

@@ -77,6 +77,7 @@
 
     windowrule = [
       "border_size 0,fullscreen true"
+      "opaque true,match:class (zen-beta)"
     ];
   };
   #======================================================================#
