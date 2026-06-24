@@ -71,7 +71,7 @@
   users.users."${config.username}" = {
     isNormalUser = true;
     description = "${config.username}";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "dialout" ];
     packages = with pkgs; [];
   };
   
@@ -97,6 +97,8 @@
     libnotify
     awww
 
+    mission-planner
+    pololu-tic
   ];
   
   environment.sessionVariables = {
