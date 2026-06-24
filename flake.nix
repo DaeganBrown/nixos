@@ -69,6 +69,18 @@
             inputs.stylix.nixosModules.stylix
           ];
         };
+        capps-laptop = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./options/capps-default.nix
+            {
+              device = "-laptop";
+            }
+            ./hosts/capps-laptop/configuration.nix
+            inputs.home-manager.nixosModules.default
+            inputs.stylix.nixosModules.stylix
+          ];
+        };
         ozy = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs; };
           modules = [
@@ -97,6 +109,7 @@
             ./options/spysi-default.nix
             ./hosts/spysi/configuration.nix 
             inputs.home-manager.nixosModules.default
+            inputs.stylix.nixosModules.stylix
           ];
         };
         #=========================================================#

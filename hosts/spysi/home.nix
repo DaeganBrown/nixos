@@ -6,7 +6,6 @@
     ../../modules/home-manager/generic/hyprland-core.nix
     ../../modules/home-manager/generic/hyprland-ctrls.nix
     ../../modules/home-manager/generic/hyprland-4k.nix
-    ../../modules/home-manager/generic/waybar-theme-super-waybar.nix
     ../../modules/home-manager/generic/firefox.nix
     ../../modules/home-manager/generic/nvf.nix
     ../../modules/home-manager/spysi/git.nix
@@ -71,6 +70,6 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
   wayland.windowManager.hyprland.extraConfig = ''
-    exec-conce = ~/.config/hypr/scripts/window-close-sound.sh
+    exec-once = ~/.config/hypr/scripts/window-close-sound.sh
   '';
 }
