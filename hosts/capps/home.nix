@@ -19,6 +19,7 @@
     ../../modules/home-manager/generic/mako-default.nix
     ../../modules/home-manager/generic/kitty.nix
     ../../modules/home-manager/capps/starship.nix
+    ../../modules/home-manager/capps/zen.nix
     # uh
     inputs.nvf.homeManagerModules.default
   ];

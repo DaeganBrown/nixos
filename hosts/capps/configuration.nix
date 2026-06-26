@@ -91,6 +91,7 @@
     };
     sharedModules = [
       inputs.stylix.homeModules.stylix
+      inputs.zen-browser.homeModules.beta
     ];
   };
   xdg.portal.enable = true;
