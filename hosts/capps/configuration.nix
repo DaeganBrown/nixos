@@ -12,6 +12,7 @@
       ../../modules/nixos/discord.nix
       ../../modules/nixos/gdm.nix
       ../../modules/nixos/super-user-rules.nix
+      ../../modules/nixos/vscode.nix
     ];
 
   # Bootloader.
