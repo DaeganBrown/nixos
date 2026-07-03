@@ -4,6 +4,7 @@
   home.packages = with pkgs; [
     hyprlauncher
   ];
+  programs.hyprlock.enable = true;
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {

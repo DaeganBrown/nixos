@@ -1,4 +1,4 @@
-{ inputs, osConfig, pkgs, lib, ... }:
+{ inputs, config, osConfig, pkgs, lib, ... }:
 
 {
   imports = [
@@ -31,7 +31,6 @@
   home.homeDirectory = "/home/${osConfig.username}";
 
   home.stateVersion = "25.11"; # Please read the comment before changing.
-
   home.packages = [
     pkgs.hello
 
@@ -84,7 +83,12 @@ eval "$(starship init bash)"
   home.sessionVariables = {
     EDITOR = "nvim";
   };
-
+  xdg.userDirs = {
+    enable = true;
+    createDirectories = false;
+    download = "${config.home.homeDirectory}/downloads";
+    documents = "${config.home.homeDirectory}/documents";
+  };
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 

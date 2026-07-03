@@ -12,16 +12,19 @@
       ../../modules/nixos/discord.nix
       ../../modules/nixos/super-user-rules.nix
       ../../modules/nixos/obsidian.nix
-      ../../modules/nixos/vscode.nix
+      ../../modules/nixos/ozy/vscode.nix
       ../../modules/nixos/printer.nix
-    ];
 
+      # MDR stuff
+      ../../modules/nixos/ozy/netplans.nix
+    ];
+  virtualisation.docker.enable = true;
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   services.displayManager.sddm.enable = false;
   # Use latest kernel.
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   networking.hostName = "${config.hostName}"; # Define your hostname.
@@ -75,9 +78,10 @@
   users.users."${config.username}" = {
     isNormalUser = true;
     description = "${config.username}";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "dialout" "docker" ];
     packages = with pkgs; [];
   };
+  nix.settings.trusted-users = [ "root" "${config.username}" ];
   
   # home manager 
   home-manager = {

@@ -110,4 +110,17 @@
 #       '';
     };
   };
+  xdg.mimeApps = {
+      enable = true;
+      defaultApplications = let
+        zen = "zen-beta.desktop"; # or zen.desktop / zen-twilight.desktop, matches the .desktop filename
+      in {
+        "text/html" = zen;
+        "x-scheme-handler/http" = zen;
+        "x-scheme-handler/https" = zen;
+        "x-scheme-handler/about" = zen;
+        "x-scheme-handler/unknown" = zen;
+        "application/xhtml+xml" = zen;
+      };
+    };
 }
