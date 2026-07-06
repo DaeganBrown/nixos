@@ -59,6 +59,11 @@
       "blur, fuzzel"
       "ignorezero, fuzzel"
     ]; 
+    permission = [
+      "${lib.getExe pkgs.grim}, screencopy, allow"
+      "${lib.getExe config.programs.hyprlock.package}, screencopy, allow"
+      "${pkgs.xdg-desktop-portal-hyprland}/libexec/.xdg-desktop-portal-hyprland-wrapped, screencopy, allow"
+    ];
   };
 
   #======================================================================#
