@@ -20,6 +20,8 @@
       base0D = "4fb3ff";  # functions/blue
       base0E = "c77dff";  # keywords (purple)
       base0F = "ff6ec7";  # special/deprecated (magenta)
+      base10 = "2a2bbf";
+      base11 = "9294f7";
     };
     fonts = {
       monospace = {
@@ -39,8 +41,8 @@
   wayland.windowManager.hyprland.settings = {
     general = {
       border_size = 2;
-      "col.active_border" = "rgba(${config.lib.stylix.colors.base0C}ee) rgba(${config.lib.stylix.colors.base0D}ee) 45deg";
-      "col.inactive_border" = "rgba(${config.lib.stylix.colors.base09}ee) rgba(${config.lib.stylix.colors.base08}ee) 45deg)";
+      "col.active_border" = "rgba(${config.lib.stylix.colors.base07}ee)";
+      "col.inactive_border" = "rgba(${config.lib.stylix.colors.base09}ee) rgba(${config.lib.stylix.colors.base08}ee) 45deg";
     };
     decoration.blur = {
       enabled = true;
@@ -49,7 +51,7 @@
       vibrancy = 0.2;
     };
     decoration = {
-      active_opacity = 0.85;
+      active_opacity = 0.90;
       inactive_opacity = 0.7;
     };
     layyerrule = [ 
@@ -57,6 +59,11 @@
       "blur, fuzzel"
       "ignorezero, fuzzel"
     ]; 
+    permission = [
+      "${lib.getExe pkgs.grim}, screencopy, allow"
+      "${lib.getExe config.programs.hyprlock.package}, screencopy, allow"
+      "${pkgs.xdg-desktop-portal-hyprland}/libexec/.xdg-desktop-portal-hyprland-wrapped, screencopy, allow"
+    ];
   };
 
   #======================================================================#
@@ -80,6 +87,12 @@
       "opaque true,match:class (zen-beta)"
     ];
   };
+
+  #======================================================================#
+  #= Login manager                                                      =#
+  #======================================================================#
+  
+
   #======================================================================#
   #= Shell Scripts                                                      =#
   #======================================================================#

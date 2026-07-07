@@ -26,6 +26,7 @@
         "$mod, F, fullscreen"
         "$mod, E, exec, $fileManager"
         "$mod SHIFT, C, exec, hyprctl dispatch centerwindow"
+        "$mod, L, exec, hyprlock"
       ] ++ (
 	      ## workspaces
 	      builtins.concatLists ( 

@@ -2,6 +2,8 @@
 
 {
   environment.systemPackages = with pkgs; [
+    docker
+    docker-compose
     ags
     btop-rocm
     base16-schemes
