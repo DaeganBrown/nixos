@@ -13,6 +13,7 @@
       ../../modules/nixos/super-user-rules.nix
       ../../modules/nixos/obsidian.nix
       ../../modules/nixos/vscode.nix
+      ../../modules/nixos/thunar.nix
     ];
 
   # Bootloader.
@@ -71,7 +72,7 @@
   users.users."${config.username}" = {
     isNormalUser = true;
     description = "${config.username}";
-    extraGroups = [ "networkmanager" "wheel" "dialout" ];
+    extraGroups = [ "networkmanager" "wheel" "dialout" "docker" ];
     packages = with pkgs; [];
   };
   
@@ -94,12 +95,15 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
+  virtualisation.docker.enable = true;
   environment.systemPackages = with pkgs; [
     libnotify
     awww
 
     mission-planner
     pololu-tic
+
+    docker
   ];
   
   environment.sessionVariables = {

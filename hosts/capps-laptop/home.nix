@@ -25,6 +25,7 @@
     ../../modules/home-manager/capps/starship.nix
     ../../modules/home-manager/generic/stylix.nix
     ../../modules/home-manager/capps-laptop/zen.nix
+    ../../modules/home-manager/generic/thunar.nix
 
     # uh
     inputs.nvf.homeManagerModules.default
