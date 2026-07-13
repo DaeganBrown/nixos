@@ -27,7 +27,7 @@
         "custom/smallspacer"
         "custom/steam"
         "custom/smallspacer"
-        "custom/vivaldi"
+        "custom/browser"
         "custom/smallspacer"
         "custom/discord"
         "custom/smallspacer"
@@ -92,11 +92,11 @@
         tooltip  = true;
         tooltip-format = "Steam";
       };
-      "custom/vivaldi" = {
+      "custom/browser" = {
         format = "  ";
-        on-click = "open-or-focus vivaldi vivaldi";
+        on-click = "open-or-focus ${osConfig.searchEngine} ${osConfig.searchEngine}";
         tooltip = true;
-        tooltip-format = "Vivaldi";
+        tooltip-format = "${osConfig.searchEngine}";
       };
       "custom/discord" = {
         format = "  ";
