@@ -11,6 +11,7 @@
     ../../modules/home-manager/spysi/git.nix
     ../../modules/home-manager/generic/scripts.nix
     ../../modules/home-manager/generic/stylix.nix
+    ../../modules/home-manager/generic/kitty.nix
 
     # uh
     inputs.nvf.homeManagerModules.default
