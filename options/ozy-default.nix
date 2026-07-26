@@ -8,7 +8,7 @@
       horizontal = 1920;
       vertical = 1200;
     };
-    searchEngine = "vivaldi";
+    searchEngine = "zen-beta";
     taskbar = {
       position = "top";
       marginSide = 10;
