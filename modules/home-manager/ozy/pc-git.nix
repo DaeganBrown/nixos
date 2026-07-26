@@ -11,6 +11,7 @@
 	  email = "149893841+DaeganBrown@users.noreply.github.com";
 	  name = "Ozymandias";
 	};
+  pull.rebase = true;
 	init.defaultBranch = "main";
       };
     };
