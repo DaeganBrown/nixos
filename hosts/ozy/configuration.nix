@@ -4,7 +4,6 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix 
-      ../../modules/nixos/common-pkgs.nix
       ../../modules/nixos/multi-media.nix 
       ../../modules/nixos/fonts.nix
       ../../modules/nixos/steam.nix
@@ -92,6 +91,7 @@
     };
     sharedModules = [
       inputs.stylix.homeModules.stylix
+      inputs.zen-browser.homeModules.beta
     ];
   };
   xdg.portal = {

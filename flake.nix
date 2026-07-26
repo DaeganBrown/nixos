@@ -37,6 +37,10 @@
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
+
+      globalModules = [
+        ./modules/nixos/common
+      ];
     in
     {
       nixosConfigurations = {
@@ -45,14 +49,14 @@
         #=========================================================#
         default = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs; };
-	        modules = [
+	        modules = globalModules ++ [
 	          ./hosts/default/configuration.nix
             inputs.home-manager.nixosModules.default
 	        ];
 	      };
         installerIso = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs; };
-          modules = [
+          modules = globalModules ++ [
             ./options/iso-default.nix
             ./hosts/isoimage/configuration.nix
           ];
@@ -62,7 +66,7 @@
         #=========================================================#
         capps = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs; };
-          modules = [
+          modules = globalModules ++ [
             ./options/capps-default.nix
             ./hosts/capps/configuration.nix 
             inputs.home-manager.nixosModules.default
@@ -71,7 +75,7 @@
         };
         capps-laptop = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs; };
-          modules = [
+          modules = globalModules ++ [
             ./options/capps-default.nix
             {
               device = "-laptop";
@@ -83,7 +87,7 @@
         };
         ozy = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs; };
-          modules = [
+          modules = globalModules ++ [
             ./options/ozy-pc.nix
             ./hosts/ozy/configuration.nix
             inputs.home-manager.nixosModules.default
@@ -92,7 +96,7 @@
         };
 	      ozy-laptop = nixpkgs.lib.nixosSystem {
 	        specialArgs = { inherit inputs; };
-	        modules = [
+	        modules = globalModules ++ [
             ./options/ozy-default.nix
             {
               device = "-laptop";
@@ -105,7 +109,7 @@
         };
         spysi = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs; };
-          modules = [
+          modules = globalModules ++ [
             ./options/spysi-default.nix
             ./hosts/spysi/configuration.nix 
             inputs.home-manager.nixosModules.default
@@ -117,7 +121,7 @@
         #=========================================================#
         admin-PowerEdge-720 = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs; };
-          modules = [
+          modules = globalModules ++ [
             ./options/server-poweredge-720.nix
             {
               device = "-poweredge-720";
