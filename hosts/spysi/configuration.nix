@@ -9,8 +9,8 @@
       ../../modules/nixos/steam.nix 
       ../../modules/nixos/nvidia.nix
       ../../modules/nixos/discord.nix
-      ../../modules/nixos/gdm.nix
       ../../modules/nixos/super-user-rules.nix
+      ../../modules/nixos/tuigreet.nix
     ];
 
   # Bootloader.
