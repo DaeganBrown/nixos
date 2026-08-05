@@ -14,6 +14,7 @@
       ../../modules/nixos/ozy/vscode.nix
       ../../modules/nixos/printer.nix
       ../../modules/nixos/betaflight.nix
+      ../../modules/nixos/tuigreet.nix
       # ../../modules/nixos/fingerprint-scanner.nix
 
       # MDR stuff

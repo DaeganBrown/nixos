@@ -13,6 +13,7 @@
       ../../modules/nixos/obsidian.nix
       ../../modules/nixos/vscode.nix
       ../../modules/nixos/thunar.nix
+      ../../modules/nixos/tuigreet.nix
       # flkae inputs
     ];
 
