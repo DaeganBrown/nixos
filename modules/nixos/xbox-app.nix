@@ -11,7 +11,6 @@
           --name=Xbox \
           --class=Xbox \
           --user-data-dir="$HOME/.config/xbox-chrome-profile" \
-          --use-fake-ui-for-media-stream \
           "$@"
       '')
     ];
