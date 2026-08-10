@@ -56,7 +56,6 @@
         exec-once = [
           "sleep 0.5 && awww-daemon"
           "sleep 0.5 && awww img ~/nixos/wallpaper/${osConfig.wallpaper}"
-          "sleep 0.5 && waybar"
         ];
       };
       misc = {
