@@ -14,6 +14,7 @@
       ../../modules/nixos/vscode.nix
       ../../modules/nixos/thunar.nix
       ../../modules/nixos/tuigreet.nix
+      ../../modules/nixos/tailscale.nix
     ];
 
   # Bootloader.
