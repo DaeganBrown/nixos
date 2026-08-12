@@ -11,6 +11,7 @@
       ../../modules/nixos/discord.nix
       ../../modules/nixos/super-user-rules.nix
       ../../modules/nixos/tuigreet.nix
+      ../../modules/nixos/tailscale.nix
     ];
 
   # Bootloader.
