@@ -9,7 +9,7 @@
       ../../modules/nixos/super-user-rules.nix
       ../../modules/nixos/server/ssh.nix
       ../../modules/nixos/docker.nix
-      ../../modules/server/minecraft-server.nix
+      # ../../modules/nixos/server/minecraft-server.nix
     ];
 
   # Bootloader.
