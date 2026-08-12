@@ -13,6 +13,7 @@
       ../../modules/nixos/obsidian.nix
       ../../modules/nixos/vscode.nix
       ../../modules/nixos/tuigreet.nix
+      ../../modules/nixos/tailscale.nix
     ];
 
   # Bootloader.

@@ -16,6 +16,7 @@
       ../../modules/nixos/betaflight.nix
       ../../modules/nixos/xbox-app.nix
       ../../modules/nixos/tuigreet.nix
+      ../../modules/nixos/tailscale.nix
       # ../../modules/nixos/fingerprint-scanner.nix
 
       # MDR stuff
