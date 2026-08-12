@@ -23,7 +23,7 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  networking.hostName = "${config.hostname}"; # Define your hostname.
+  networking.hostName = "${config.hostName}"; # Define your hostname.
   networking.networkmanager.enable = true;
 
   time.timeZone = "America/Chicago";

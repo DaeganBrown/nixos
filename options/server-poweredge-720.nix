@@ -4,8 +4,8 @@
   imports = [ ./options.nix ];
 
   config = {
-    hostname = "browncrashpad";
-    search_engine = "vivaldi";
+    hostName = "browncrashpad";
+    searchEngine = "vivaldi";
     terminal = "kitty";
     theme = "tron";
     username = "admin";
