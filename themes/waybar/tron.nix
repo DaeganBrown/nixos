@@ -41,7 +41,7 @@
         "custom/smallspacer"
         "custom/media"
         "custom/smallspacer"
-        "cava"
+        # "cava"
       ];
       modules-center = [
         "custom/smallspacer"
@@ -129,25 +129,25 @@
         return-type = "json";
         interval = 3;
       };
-      "cava" = {
-        framerate = 60;
-        autosens = 1;
-        bars = 14;
-        lower_cutoff_freq = 50;
-        higher_cutoff_freq = 10000;
-        method = "pipewire";
-        source = "auto";
-        stereo = true;
-        reverse = false;
-        bar_delimiter = 0;
-        monstercat = true;
-        waves = false;
-        noise_reduction = 0.77;
-        input_delay = 2;
-        hide_on_silence = true;
-        sleep_timer = 3;
-        format-icons = [ "▁" "▂" "▃" "▄" "▅" "▆" "▇" "█"];
-      };
+      # "cava" = {
+      #   framerate = 60;
+      #   autosens = 1;
+      #   bars = 14;
+      #   lower_cutoff_freq = 50;
+      #   higher_cutoff_freq = 10000;
+      #   method = "pipewire";
+      #   source = "auto";
+      #   stereo = true;
+      #   reverse = false;
+      #   bar_delimiter = 0;
+      #   monstercat = true;
+      #   waves = false;
+      #   noise_reduction = 0.77;
+      #   input_delay = 2;
+      #   hide_on_silence = true;
+      #   sleep_timer = 3;
+      #   format-icons = [ "▁" "▂" "▃" "▄" "▅" "▆" "▇" "█"];
+      # };
       #==================#
       #= Center Modules =#
       #==================#
