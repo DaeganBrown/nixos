@@ -15,6 +15,7 @@
       ../../modules/nixos/thunar.nix
       ../../modules/nixos/tuigreet.nix
       ../../modules/nixos/xbox-app.nix
+      ../../modules/nixos/tailscale.nix
       # flkae inputs
     ];
 
