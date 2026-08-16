@@ -10,8 +10,35 @@
       ../../modules/nixos/server/ssh.nix
       ../../modules/nixos/docker.nix
       # ../../modules/nixos/server/minecraft-server.nix
+      ../../modules/nixos/tailscale.nix
+      ../../modules/nixos/mullvad.nix
     ];
+  # Server stuff
+  networking.firewall.allowedTCPPorts = [ 8096 ];
 
+  systemd.services.tailscale-cert-renew = {
+    description = "renew Tailscale HTTPS certificate for Caddy";
+    script = ''
+      ${inputs.nixpkgs-unstable.legacyPackages.${pkgs.system}.tailscale}}/bin/tailscale cert \
+        --cert-file /home/admin/homelab/caddy/certs/browncrashpad.turtle-tilapia.ts.net.crt \
+        --key-file /home/admin/homelab/caddy/certs/browncrashpad.turtle-tilapia.ts.net.key \
+        browncrashpad.turtle-tilapia.ts.net
+      ${pkgs.docker}/bin/docker restart caddy
+    '';
+    serviceConfig = {
+      Type = "oneshot";
+      User = "root";
+    };
+  };
+
+  systemd.timers.tailscale-cert-renew = {
+    description = "Weekly tailscale cert renewal";
+    wantedBy = [ "timer.target" ];
+    timerConfig = {
+      OnCalendar = "weekly";
+      Persistent = true;
+    };
+  };
   # Bootloader.
   # boot.loader.systemd-boot.enable = true;
   # boot.loader.efi.canTouchEfiVariables = true;
