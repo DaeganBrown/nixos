@@ -22,6 +22,7 @@
       # MDR stuff
       ../../modules/nixos/ozy/netplans.nix
     ];
+
   virtualisation.docker.enable = true;
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -109,7 +110,7 @@
   environment.systemPackages = with pkgs; [
     libnotify
     awww
-
+    android-tools
   ];
   
   environment.sessionVariables = {
