@@ -24,6 +24,7 @@
     ];
 
   virtualisation.docker.enable = true;
+  networking.nameservers = [ "1.1.1.1" "8.8.8.8" ];
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -111,6 +112,7 @@
     libnotify
     awww
     android-tools
+    python3
   ];
   
   environment.sessionVariables = {
