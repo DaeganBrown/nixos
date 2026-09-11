@@ -113,6 +113,7 @@
     awww
     android-tools
     python3
+    distrobox
   ];
   
   environment.sessionVariables = {
