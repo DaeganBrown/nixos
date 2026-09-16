@@ -22,7 +22,9 @@
       # MDR stuff
       ../../modules/nixos/ozy/netplans.nix
     ];
-
+  programs.bash.interactiveShellInit = ''
+    source ~/projects/llamaworks-docs/scripts/.bash_mdr
+  '';
   virtualisation.docker.enable = true;
   networking.nameservers = [ "1.1.1.1" "8.8.8.8" ];
   # Bootloader.
