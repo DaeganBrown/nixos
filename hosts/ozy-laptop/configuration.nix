@@ -17,10 +17,12 @@
       ../../modules/nixos/xbox-app.nix
       ../../modules/nixos/tuigreet.nix
       ../../modules/nixos/tailscale.nix
+      ../../modules/nixos/collections/game-dev.nix
       # ../../modules/nixos/fingerprint-scanner.nix
 
       # MDR stuff
       ../../modules/nixos/ozy/netplans.nix
+      # ../../modules/nixos/uah-vpn.nix
     ];
   programs.bash.interactiveShellInit = ''
     source ~/projects/llamaworks-docs/scripts/.bash_mdr
