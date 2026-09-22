@@ -27,6 +27,8 @@
   programs.bash.interactiveShellInit = ''
     source ~/projects/llamaworks-docs/scripts/.bash_mdr
   '';
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
   virtualisation.docker.enable = true;
   networking.nameservers = [ "1.1.1.1" "8.8.8.8" ];
   # Bootloader.
