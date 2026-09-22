@@ -30,6 +30,7 @@
             extensions.markview-nvim.enable = true;
           };
           css.enable = true;
+          json.enable = true;
         };
 
         autocmds = [
