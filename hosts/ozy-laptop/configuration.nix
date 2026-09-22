@@ -22,7 +22,7 @@
 
       # MDR stuff
       ../../modules/nixos/ozy/netplans.nix
-      # ../../modules/nixos/uah-vpn.nix
+       ../../modules/nixos/uah-vpn.nix
     ];
   programs.bash.interactiveShellInit = ''
     source ~/projects/llamaworks-docs/scripts/.bash_mdr
