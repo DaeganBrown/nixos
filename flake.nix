@@ -4,10 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    nix-colors.url = "github:misterio77/nix-colors";
-    hyprland = {
-      url = "github:hyprwm/Hyprland";
-    };
+    hyprland.url = "github:hyprwm/Hyprland";
     hardware.url = "github:nixos/nixos-hardware/master";
     hyprland-plugins = {
       url = "github:hyprwm/hyprland-plugins";
@@ -17,7 +14,6 @@
       url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     nvf = {
       url = "github:NotAShelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -33,103 +29,31 @@
     };
   };
 
-  outputs = { self, nixpkgs, ... }@inputs:
+  outputs = 
+    inputs:
     let
-      system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
-
-      globalModules = [
-        ./modules/nixos/common
-      ];
+      inherit (import ./lib { inherit inputs; }) mkHost;  
     in
     {
       nixosConfigurations = {
         #=========================================================#
         # System Configs
         #=========================================================#
-        default = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; };
-	        modules = globalModules ++ [
-	          ./hosts/default/configuration.nix
-            inputs.home-manager.nixosModules.default
-	        ];
-	      };
-        installerIso = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; };
-          modules = globalModules ++ [
-            ./options/iso-default.nix
-            ./hosts/isoimage/configuration.nix
-          ];
-        };
+        default = mkHost { hostname = "default"; };
+        installerIso = mkHost { hostname = "isoimage"; };
+
         #=========================================================#
         # Users
         #=========================================================#
-        capps = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; };
-          modules = globalModules ++ [
-            ./options/capps-default.nix
-            ./hosts/capps/configuration.nix 
-            inputs.home-manager.nixosModules.default
-            inputs.stylix.nixosModules.stylix
-          ];
-        };
-        capps-laptop = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; };
-          modules = globalModules ++ [
-            ./options/capps-default.nix
-            {
-              device = "-laptop";
-            }
-            ./hosts/capps-laptop/configuration.nix
-            inputs.home-manager.nixosModules.default
-            inputs.stylix.nixosModules.stylix
-          ];
-        };
-        ozy = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; };
-          modules = globalModules ++ [
-            ./options/ozy-pc.nix
-            ./hosts/ozy/configuration.nix
-            inputs.home-manager.nixosModules.default
-            inputs.stylix.nixosModules.stylix
-          ];
-        };
-	      ozy-laptop = nixpkgs.lib.nixosSystem {
-	        specialArgs = { inherit inputs; };
-	        modules = globalModules ++ [
-            ./options/ozy-default.nix
-            {
-              device = "-laptop";
-              font.size = 11;
-            }
-	          ./hosts/ozy-laptop/configuration.nix
-	          inputs.home-manager.nixosModules.default
-            inputs.stylix.nixosModules.stylix
-	        ];
-        };
-        spysi = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; };
-          modules = globalModules ++ [
-            ./options/spysi-default.nix
-            ./hosts/spysi/configuration.nix 
-            inputs.home-manager.nixosModules.default
-            inputs.stylix.nixosModules.stylix
-          ];
-        };
-        #=========================================================#
+        capps = mkHost { hostname = "capps"; };
+        capps-laptop = mkHost { hostname = "capps-laptop"; };
+        ozy = mkHost { hostname = "ozy"; };
+        ozy-laptop = mkHost { hostname = "ozy-laptop"; };
+        spysi = mkHost { hostname = "spysi"; };
+	      #=========================================================#
         # Servers
         #=========================================================#
-        admin-PowerEdge-720 = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; };
-          modules = globalModules ++ [
-            ./options/server-poweredge-720.nix
-            {
-              device = "-poweredge-720";
-            }
-	    ./hosts/server-poweredge-720/configuration.nix
-            inputs.home-manager.nixosModules.default
-          ];
-        };
+        poweredge-720 = mkHost { hostname = "browncrashpad"; };
       };
     };
 }
