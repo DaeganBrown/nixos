@@ -39,21 +39,21 @@
         #=========================================================#
         # System Configs
         #=========================================================#
-        default = mkHost { hostname = "default"; };
-        installerIso = mkHost { hostname = "isoimage"; };
+        default       = mkHost { hostname = "default";      };
+        installerIso  = mkHost { hostname = "isoimage";     };
 
         #=========================================================#
         # Users
         #=========================================================#
-        capps = mkHost { hostname = "capps"; };
-        capps-laptop = mkHost { hostname = "capps-laptop"; };
-        ozy = mkHost { hostname = "ozy"; };
-        ozy-laptop = mkHost { hostname = "ozy-laptop"; };
-        spysi = mkHost { hostname = "spysi"; };
+        capps         = mkHost { hostname = "capps";        };
+        capps-laptop  = mkHost { hostname = "capps-laptop"; };
+        ozy           = mkHost { hostname = "ozy";          };
+        ozy-laptop    = mkHost { hostname = "ozy-laptop";   };
+        spysi         = mkHost { hostname = "spysi";        };
 	      #=========================================================#
         # Servers
         #=========================================================#
-        poweredge-720 = mkHost { hostname = "browncrashpad"; };
+        poweredge-720 = mkHost { hostname = "browncrashpad";};
       };
     };
 }
