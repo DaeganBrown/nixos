@@ -1,4 +1,4 @@
-{ inputs, overlays }:
+{ inputs, overlays ? [ ] }:
 let
   inherit (inputs) nixpkgs home-manager stylix;
 in
