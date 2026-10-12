@@ -1,3 +1,4 @@
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/A8E628KA51)
 # NixOS Config
 
 # Table of Contents
