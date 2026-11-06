@@ -7,6 +7,7 @@
     ags
     btop-rocm
     base16-schemes
+    direnv
     flavours
     fzf
     git

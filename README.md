@@ -61,24 +61,3 @@ The scope identifies which part of the setup is being changed
 
 
 
-# Roadmap
-
-## MVP
-
-- [x] NVidia Setups
-- [x] Steam 
-- [x] Stoat
-- [x] `spysi` profile
-- [x] `rockingcone` profile
-  - [ ] `rockingcone-laptop` profile
-- [ ] `ozy` profile
-  - [x] `ozy-laptop` profile
-- [x] vivaldi
-
-## Roadmap
-
-
-
-## Misc. Tasks
-
-## Bugs

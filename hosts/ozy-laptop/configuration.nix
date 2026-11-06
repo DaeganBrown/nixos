@@ -17,13 +17,20 @@
       ../../modules/nixos/xbox-app.nix
       ../../modules/nixos/tuigreet.nix
       ../../modules/nixos/tailscale.nix
+      ../../modules/nixos/collections/game-dev.nix
       # ../../modules/nixos/fingerprint-scanner.nix
 
       # MDR stuff
       ../../modules/nixos/ozy/netplans.nix
+       ../../modules/nixos/uah-vpn.nix
     ];
-
+  programs.bash.interactiveShellInit = ''
+    source ~/projects/llamaworks-docs/scripts/.bash_mdr
+  '';
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
   virtualisation.docker.enable = true;
+  networking.nameservers = [ "1.1.1.1" "8.8.8.8" ];
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -111,6 +118,8 @@
     libnotify
     awww
     android-tools
+    python3
+    distrobox
   ];
   
   environment.sessionVariables = {

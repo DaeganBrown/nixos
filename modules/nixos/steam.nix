@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   programs.steam = {
@@ -7,5 +7,6 @@
     dedicatedServer.openFirewall = false;
     localNetworkGameTransfers.openFirewall = false;
     gamescopeSession.enable = false;
+    extraPackages = [ pkgs.webkitgtk_4_1 ];
   };
 }
