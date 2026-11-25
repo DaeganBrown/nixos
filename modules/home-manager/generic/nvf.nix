@@ -45,6 +45,32 @@
             '';
           }
         ];
+
+        keymaps = let
+          dirs = [ "h" "j" "k" "l" ];
+        in (map (d: {
+            mode = "n";
+            key = "<C-${d}>";
+            action = "<C-w>${d}";
+            silent = true;
+            desc = "Move to ${d} split";
+        }) dirs)
+        ++ (map (d: {
+            mode = "t";
+            key = "<C-${d}>";
+            action = "<C-\\><C-n><C-w>${d}";
+            silent = true;
+            desc = "Move to ${d} split from terminal";
+        }) dirs)
+        ++ [
+          {
+            mode = "t";
+            key = "<Esc>";
+            action = "<C-\\><C-n>";
+            silent = true;
+            desc = "Leave terminal mode";
+          }
+        ];
       
 
         statusline.lualine.enable = true;

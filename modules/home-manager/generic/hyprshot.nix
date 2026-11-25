@@ -49,7 +49,7 @@
       bind = [
         ", Print, exec, ${lib.getExe pkgs.hyprshot} --mode region --raw | ${lib.getExe pkgs.satty} --filename -"
         "SHIFT, Print, exec, ${lib.getExe pkgs.hyprshot} --mode window --raw | ${lib.getExe pkgs.satty} --filename -"
-        "ALT, Print, exec, ${lib.getExe pkgs.hyprshot} --mode output --raw | ${lib.getExe pkgs.satty} --filename -"
+        "ALT, Print, exec, ${lib.getExe pkgs.hyprshot} --mode active --mode output ${config.home.homeDirectory}/pictures/screenshots"
       ];
     };
   };

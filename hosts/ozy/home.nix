@@ -24,7 +24,6 @@
     ../../modules/home-manager/ozy/pc-git.nix
     ../../modules/home-manager/ozy/starship.nix
     ../../modules/home-manager/ozy/zen.nix
-    ../../modules/home-manager/ozy/intellij.nix
     ../../modules/home-manager/generic/stylix.nix
     ../../modules/home-manager/generic/fuzzel.nix
     ../../modules/home-manager/generic/thunar.nix

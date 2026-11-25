@@ -22,11 +22,21 @@
 
       # MDR stuff
       ../../modules/nixos/ozy/netplans.nix
-       ../../modules/nixos/uah-vpn.nix
+      ../../modules/nixos/uah-vpn.nix
     ];
   programs.bash.interactiveShellInit = ''
     source ~/projects/llamaworks-docs/scripts/.bash_mdr
   '';
+  services.chrony = {
+  enable = true;
+  extraConfig = ''
+    local stratum 10
+    allow 192.168.50.0/24
+  '';
+};
+  services.udev.packages = with pkgs; [ platformio-core.udev ];
+  networking.firewall.allowedUDPPorts = [ 123 ];
+  networking.firewall.trustedInterfaces = [ "enp2s0" ];
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
   virtualisation.docker.enable = true;
@@ -120,11 +130,14 @@
     android-tools
     python3
     distrobox
+    ffmpeg-full
   ];
   
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
   };
+  zramSwap.enable = true;
+  zramSwap.memoryPercent = 50;
 
   system.stateVersion = "25.11"; # Did you read the comment?
 

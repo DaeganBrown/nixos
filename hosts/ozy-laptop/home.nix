@@ -19,7 +19,6 @@
     # Mine
     ../../modules/home-manager/ozy/git-laptop.nix
     ../../modules/home-manager/ozy/starship.nix
-    ../../modules/home-manager/ozy/intellij.nix
     ../../modules/home-manager/ozy/zen.nix
     ../../modules/home-manager/generic/stylix.nix
 
@@ -27,14 +26,35 @@
     inputs.nvf.homeManagerModules.default
     inputs.nix-colors.homeManagerModules.default
   ];
+  programs.fzf.enable = true;
   home.username = osConfig.username;
   home.homeDirectory = "/home/${osConfig.username}";
+  programs.yazi = {
+  enable = true;
+  settings = {
+    yazi = {
+      opener = {
+        play = [
+          { run = ''mpv "$@"''; orphan = true; for = "unix"; }
+        ];
+        edit = [
+          { run = ''$EDITOR "$@"''; block = true; for = "unix"; }
+        ];
+      };
+      open.rules = [
+        { mime = "video/*"; use = "play"; }
+        { mime = "text/*"; use = "edit"; }
+      ];
+    };
+  };
+};
 
   home.stateVersion = "25.11"; # Please read the comment before changing.
   home.packages = [
     pkgs.hello
-
-    # # You can also create simple shell scripts directly inside your
+    pkgs.signal-desktop
+    pkgs.orca-slicer
+    inputs.nixpkgs-unstable.legacyPackages.${pkgs.stdenv.hostPlatform.system}.glab    # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
     # # environment:
     # (pkgs.writeShellScriptBin "my-hello" ''
@@ -43,13 +63,36 @@
     # (pkgs.writeShellScriptBin "check-builds" ''
     #  nix-env --list-generations
     # '')
+    (pkgs.writeShellScriptBin "countdown" ''
+      target="2027-05-29 00:00:00"
+
+      date=${pkgs.coreutils}/bin/date
+      now=$($date +%s)
+      end=$($date -d "$target" +%s)
+      diff=$((end - now))
+
+      if [ "$diff" -le 0 ]; then
+        printf '{"text": "🎉", "tooltip": "The day has arrived", "class": "done"}\n'
+        exit 0
+      fi
+
+      d=$((diff / 86400))
+      h=$(( (diff % 86400) / 3600 ))
+      m=$(( (diff % 3600) / 60 ))
+      s=$((diff % 60))
+      pretty=$($date -d "$target" '+%A, %B %-d %Y')
+
+      printf '{"text": "%dd %02dh %02dm %02ds", "tooltip": "%s", "class": "counting"}\n' \
+        "$d" "$h" "$m" "$s" "$pretty"
+    '')
   ];
 
   home.file = {
     bashrc = {
       target = "/home/${osConfig.username}/.bashrc";
       text = ''
-eval "$(starship init bash)"
+        eval "$(starship init bash)"
+        export GITLAB_TOKEN="$(cat /home/ozy/.secret/glab-nix)"
       '';
     };
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in

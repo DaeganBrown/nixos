@@ -49,6 +49,7 @@
         "custom/smallspacer"
       ];
       modules-right = [
+        "custom/countdown"
         "custom/smallspacer"
         "group/tray"
         "network"
@@ -160,6 +161,13 @@
       #=================#
       #= Right Modules =#
       #=================#
+      "custom/countdown" = {
+        exec = "${config.home.profileDirectory}/bin/countdown";
+        return-type = "json";
+        interval = 1;
+        format = "{}";
+        tooltip = true;
+      };
       "group/tray" = {
         orientation = "horizontal";
         drawer = {
